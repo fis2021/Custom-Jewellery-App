@@ -24,10 +24,10 @@
 
     <Text fx:id="registrationMessage" GridPane.columnIndex="1" GridPane.rowIndex="7" />
     <HBox alignment="bottom_left" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="5">
-        <Button onAction="#handleLoginAction" text="Log in" />
+        <Button fx:id="loginButton" onAction="#handleLoginAction" text="Log in" />
     </HBox>
     <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="5">
-        <Button onAction="#handleCreateAccountAction" text="Create an account" />
+        <Button fx:id="createAccountButton" onAction="#handleCreateAccountAction" text="Create an account" />
     </HBox>
    <columnConstraints>
       <ColumnConstraints />
