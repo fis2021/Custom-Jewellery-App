@@ -5,14 +5,17 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import org.loose.fis.sre.exceptions.AccountException;
+import org.loose.fis.sre.exceptions.IncorrectPasswordException;
+
+import static org.loose.fis.sre.services.UserService.getUserRole;
 
 
 public class LoginController {
-
-    @FXML
-    private Button loginButton;
 
     @FXML
     private Button createAccountButton;
@@ -20,15 +23,39 @@ public class LoginController {
     @FXML
     private Text registrationMessage;
 
+    @FXML
+    private TextField usernameField;
+
+    @FXML
+    private PasswordField passwordField;
 
 
-    public void handleLoginAction() {
-        //TODO
+
+    public void handleLoginAction() throws Exception{
+        Stage primary = (Stage) registrationMessage.getScene().getWindow();
+
+        try {
+            String role = getUserRole(usernameField.getText(), passwordField.getText());
+            if(role.equals("Client")){
+                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("startUser.fxml"));
+                Scene nextScene = new Scene(root, 800, 600);
+
+                primary.setScene(nextScene);
+            }
+            else{
+                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("startManager.fxml"));
+                Scene nextScene = new Scene(root, 800, 600);
+
+                primary.setScene(nextScene);
+            }
+        }catch (AccountException e) {
+            registrationMessage.setText(e.getMessage());
+        }
     }
 
     public void handleCreateAccountAction() throws Exception{
-        //TODO
-        Stage primary = (Stage) loginButton.getScene().getWindow();
+
+        Stage primary = (Stage) registrationMessage.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("register.fxml"));
         Scene nextScene = new Scene(root, 800, 600);
 
