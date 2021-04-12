@@ -31,7 +31,14 @@ public class ViewProductsClientController {
         productTypeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
         productPriceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
 
+        typeTable.setItems(types);
+
         materialNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         materialPriceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
+
+        materialTable.setItems(materials);
     }
+
+    private ObservableList<ProductType> types = FXCollections.observableArrayList(ProductTypeService.productTypes());
+    private ObservableList<Material> materials = FXCollections.observableArrayList(MaterialService.materials());
 }
