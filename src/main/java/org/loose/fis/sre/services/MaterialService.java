@@ -2,6 +2,7 @@ package org.loose.fis.sre.services;
 
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
+import org.loose.fis.sre.exceptions.MaterialAlreadyExistsException;
 import org.loose.fis.sre.model.Material;
 
 import java.util.Objects;
@@ -20,15 +21,15 @@ public class MaterialService {
         materialRepository = database.getRepository(Material.class);
     }
 
-    public static void addMaterial(String name, int price) throws Exception {
+    public static void addMaterial(String name, int price) throws MaterialAlreadyExistsException {
         checkMaterialDoesNotAlreadyExist(name);
         materialRepository.insert(new Material(name, price));
     }
 
-    private static void checkMaterialDoesNotAlreadyExist(String name) throws Exception {
+    private static void checkMaterialDoesNotAlreadyExist(String name) throws MaterialAlreadyExistsException {
         for (Material material : materialRepository.find()) {
             if (Objects.equals(name, material.getName()))
-                throw new Exception(name);
+                throw new MaterialAlreadyExistsException(name);
         }
     }
 }
