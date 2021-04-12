@@ -2,6 +2,7 @@ package org.loose.fis.sre.services;
 
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
+import org.loose.fis.sre.exceptions.TypeAlreadyExistsException;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
 import org.loose.fis.sre.model.ProductType;
 import org.loose.fis.sre.model.User;
@@ -22,15 +23,15 @@ public class ProductTypeService {
         productTypeRepository = database.getRepository(ProductType.class);
     }
 
-    public static void addType(String type, int price) throws Exception {
+    public static void addType(String type, int price) throws TypeAlreadyExistsException {
         checkTypeDoesNotAlreadyExist(type);
         productTypeRepository.insert(new ProductType(type, price));
     }
 
-    private static void checkTypeDoesNotAlreadyExist(String type) throws Exception {
+    private static void checkTypeDoesNotAlreadyExist(String type) throws TypeAlreadyExistsException {
         for (ProductType productType : productTypeRepository.find()) {
             if (Objects.equals(type, productType.getType()))
-                throw new Exception("Product type already exists");
+                throw new TypeAlreadyExistsException(type);
         }
     }
 }
