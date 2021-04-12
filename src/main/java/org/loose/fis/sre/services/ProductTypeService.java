@@ -7,6 +7,8 @@ import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
 import org.loose.fis.sre.model.ProductType;
 import org.loose.fis.sre.model.User;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import static org.loose.fis.sre.services.FileSystemService.getPathToFile;
@@ -33,5 +35,13 @@ public class ProductTypeService {
             if (Objects.equals(type, productType.getType()))
                 throw new TypeAlreadyExistsException(type);
         }
+    }
+
+    public static ArrayList<ProductType> productTypes() {
+        ArrayList<ProductType> list = new ArrayList<>();
+        for(ProductType productType : productTypeRepository.find()) {
+            list.add(productType);
+        }
+        return list;
     }
 }
