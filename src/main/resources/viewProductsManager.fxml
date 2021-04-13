@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.ViewProductsManagerController">
+<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.ViewProductsManagerController">
+<AnchorPane>
     <children>
-        <BorderPane prefHeight="600.0" prefWidth="400.0">
+        <BorderPane prefHeight="550.0" prefWidth="400.0">
             <center>
-                <TableView fx:id="typeTable" prefHeight="600.0" prefWidth="330.0" BorderPane.alignment="BOTTOM_LEFT">
+                <TableView fx:id="typeTable" prefHeight="550.0" prefWidth="330.0" BorderPane.alignment="BOTTOM_LEFT">
                     <columns>
                         <TableColumn fx:id="productTypeColumn" prefWidth="165.0" text="Tip" />
                         <TableColumn fx:id="productPriceColumn" prefWidth="165.0" text="Pret" />
@@ -26,9 +28,9 @@
                 </Label>
             </top>
         </BorderPane>
-        <BorderPane layoutX="400.0" prefHeight="600.0" prefWidth="400.0">
+        <BorderPane layoutX="400.0" prefHeight="550.0" prefWidth="400.0">
             <center>
-                <TableView fx:id="materialTable" prefHeight="600.0" prefWidth="330.0" BorderPane.alignment="BOTTOM_LEFT">
+                <TableView fx:id="materialTable" prefHeight="550.0" prefWidth="330.0" BorderPane.alignment="BOTTOM_LEFT">
                     <columns>
                         <TableColumn fx:id="materialNameColumn" prefWidth="165.0" text="Nume" />
                         <TableColumn fx:id="materialPriceColumn" prefWidth="165.0" text="Pret" />
@@ -47,3 +49,13 @@
         </BorderPane>
     </children>
 </AnchorPane>
+    <HBox alignment="TOP_CENTER" prefHeight="50.0" prefWidth="800.0">
+      <children>
+         <Button mnemonicParsing="false" text="Adaugare">
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets></Button>
+         <Button mnemonicParsing="false" text="Eliminare" />
+         <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Modificare pret" />
+      </children></HBox>
+    </VBox>
