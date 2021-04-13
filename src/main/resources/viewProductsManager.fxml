@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.ViewProductsClientController">
+    <children>
+        <BorderPane prefHeight="600.0" prefWidth="400.0">
+            <center>
+                <TableView fx:id="typeTable" prefHeight="600.0" prefWidth="330.0" BorderPane.alignment="BOTTOM_LEFT">
+                    <columns>
+                        <TableColumn fx:id="productTypeColumn" prefWidth="165.0" text="Tip" />
+                        <TableColumn fx:id="productPriceColumn" prefWidth="165.0" text="Pret" />
+                    </columns>
+                </TableView>
+            </center>
+            <padding>
+                <Insets bottom="50.0" left="50.0" right="20.0" top="50.0" />
+            </padding>
+            <top>
+                <Label alignment="CENTER" prefHeight="5.0" prefWidth="260.0" text="Tipuri produse" BorderPane.alignment="CENTER">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+            </top>
+        </BorderPane>
+        <BorderPane layoutX="400.0" prefHeight="600.0" prefWidth="400.0">
+            <center>
+                <TableView fx:id="materialTable" prefHeight="600.0" prefWidth="330.0" BorderPane.alignment="BOTTOM_LEFT">
+                    <columns>
+                        <TableColumn fx:id="materialNameColumn" prefWidth="165.0" text="Nume" />
+                        <TableColumn fx:id="materialPriceColumn" prefWidth="165.0" text="Pret" />
+                    </columns>
+                </TableView>
+            </center>
+            <padding>
+                <Insets bottom="50.0" left="20.0" right="50.0" top="50.0" />
+            </padding>
+            <top>
+                <Label alignment="CENTER" prefHeight="5.0" prefWidth="260.0" text="Materiale" BorderPane.alignment="CENTER">
+                    <font>
+                        <Font size="20.0" />
+                    </font></Label>
+            </top>
+        </BorderPane>
+    </children>
+</AnchorPane>
