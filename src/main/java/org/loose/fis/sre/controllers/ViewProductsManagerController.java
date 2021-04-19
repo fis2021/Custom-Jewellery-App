@@ -49,6 +49,15 @@ public class ViewProductsManagerController {
         window.setScene(new Scene(root, 800,600));
     }
 
+    public void handleDeleteTypeButtonAction() {
+        ObservableList<ProductType> typesSelected;
+        typesSelected = typeTable.getSelectionModel().getSelectedItems();
+        for(ProductType productType : typesSelected) {
+            ProductTypeService.removeType(productType);
+        }
+        typesSelected.forEach(types::remove);
+    }
+
     private ObservableList<ProductType> types = FXCollections.observableArrayList(ProductTypeService.productTypes());
     private ObservableList<Material> materials = FXCollections.observableArrayList(MaterialService.materials());
 }

@@ -55,7 +55,7 @@
                 <font>
                     <Font size="12.0" />
                 </font></Button>
-            <Button fx:id="button_remove_type" mnemonicParsing="false" prefWidth="150.0" text="Eliminare tip">
+            <Button onAction="#handleDeleteTypeButtonAction" fx:id="button_remove_type" mnemonicParsing="false" prefWidth="150.0" text="Eliminare tip">
                 <font>
                     <Font size="12.0" />
                 </font></Button>

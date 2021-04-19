@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import static org.dizitart.no2.objects.filters.ObjectFilters.eq;
 import static org.loose.fis.sre.services.FileSystemService.getPathToFile;
 
 public class ProductTypeService {
@@ -28,6 +29,10 @@ public class ProductTypeService {
     public static void addType(String type, int price) throws TypeAlreadyExistsException {
         checkTypeDoesNotAlreadyExist(type);
         productTypeRepository.insert(new ProductType(type, price));
+    }
+
+    public static void removeType(ProductType productType) {
+        productTypeRepository.remove(eq("type",productType.getType()));
     }
 
     public static void checkTypeDoesNotAlreadyExist(String type) throws TypeAlreadyExistsException {
