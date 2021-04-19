@@ -51,7 +51,7 @@
 </AnchorPane>
     <HBox alignment="TOP_CENTER" prefHeight="50.0" prefWidth="800.0">
       <children>
-         <Button mnemonicParsing="false" text="Adaugare">
+         <Button onAction="#handleAddButtonAction" mnemonicParsing="false" text="Adaugare">
             <opaqueInsets>
                <Insets />
             </opaqueInsets></Button>
