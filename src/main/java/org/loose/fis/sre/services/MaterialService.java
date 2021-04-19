@@ -28,7 +28,7 @@ public class MaterialService {
         materialRepository.insert(new Material(name, price));
     }
 
-    private static void checkMaterialDoesNotAlreadyExist(String name) throws MaterialAlreadyExistsException {
+    public static void checkMaterialDoesNotAlreadyExist(String name) throws MaterialAlreadyExistsException {
         for (Material material : materialRepository.find()) {
             if (Objects.equals(name, material.getName()))
                 throw new MaterialAlreadyExistsException(name);

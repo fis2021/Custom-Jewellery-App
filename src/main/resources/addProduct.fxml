@@ -42,14 +42,14 @@
     <Text fx:id="addMessage" GridPane.columnIndex="1" GridPane.rowIndex="5" />
 
     <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="4">
-        <Button text="Anulare">
+        <Button onAction="#handleCancelButtonAction" text="Anulare">
             <font>
                 <Font size="20.0" />
             </font></Button>
     </HBox>
 
     <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="4">
-        <Button text="Adaugare">
+        <Button onAction="#handleAddButtonAction" text="Adaugare">
             <font>
                 <Font size="20.0" />
             </font></Button>

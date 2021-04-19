@@ -30,7 +30,7 @@ public class ProductTypeService {
         productTypeRepository.insert(new ProductType(type, price));
     }
 
-    private static void checkTypeDoesNotAlreadyExist(String type) throws TypeAlreadyExistsException {
+    public static void checkTypeDoesNotAlreadyExist(String type) throws TypeAlreadyExistsException {
         for (ProductType productType : productTypeRepository.find()) {
             if (Objects.equals(type, productType.getType()))
                 throw new TypeAlreadyExistsException(type);
