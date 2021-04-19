@@ -58,6 +58,15 @@ public class ViewProductsManagerController {
         typesSelected.forEach(types::remove);
     }
 
+    public void handleDeleteMaterialButtonAction() {
+        ObservableList<Material> materialSelected;
+        materialSelected = materialTable.getSelectionModel().getSelectedItems();
+        for(Material material : materialSelected) {
+            MaterialService.removeMaterial(material);
+        }
+        materialSelected.forEach(materials::remove);
+    }
+
     private ObservableList<ProductType> types = FXCollections.observableArrayList(ProductTypeService.productTypes());
     private ObservableList<Material> materials = FXCollections.observableArrayList(MaterialService.materials());
 }

@@ -9,6 +9,7 @@ import org.loose.fis.sre.model.ProductType;
 import java.util.ArrayList;
 import java.util.Objects;
 
+import static org.dizitart.no2.objects.filters.ObjectFilters.eq;
 import static org.loose.fis.sre.services.FileSystemService.getPathToFile;
 
 public class MaterialService {
@@ -26,6 +27,10 @@ public class MaterialService {
     public static void addMaterial(String name, int price) throws MaterialAlreadyExistsException {
         checkMaterialDoesNotAlreadyExist(name);
         materialRepository.insert(new Material(name, price));
+    }
+
+    public static void removeMaterial(Material material){
+        materialRepository.remove(eq("name", material.getName()));
     }
 
     public static void checkMaterialDoesNotAlreadyExist(String name) throws MaterialAlreadyExistsException {
