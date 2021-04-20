@@ -50,24 +50,28 @@
         </children>
     </AnchorPane>
     <HBox alignment="TOP_CENTER" prefHeight="80.0" prefWidth="800.0" style="-fx-spacing: 50;">
-        <children>
-            <Button fx:id="button_add" mnemonicParsing="false" onAction="#handleAddButtonAction" prefWidth="150.0" text="Adaugare">
-                <font>
-                    <Font size="12.0" />
-                </font></Button>
-            <Button onAction="#handleDeleteTypeButtonAction" fx:id="button_remove_type" mnemonicParsing="false" prefWidth="150.0" text="Eliminare tip">
-                <font>
-                    <Font size="12.0" />
-                </font></Button>
-            <Button onAction="#handleDeleteMaterialButtonAction" fx:id="button_remove_material" layoutX="335.0" layoutY="10.0" mnemonicParsing="false" prefWidth="150.0" text="Eliminare material">
-                <font>
-                    <Font size="12.0" />
-                </font>
-            </Button>
-            <Button fx:id="button_modify" mnemonicParsing="false" prefWidth="150.0" text="Modificare pret">
-                <font>
-                    <Font size="12.0" />
-                </font></Button>
-        </children>
+        <Button mnemonicParsing="false" onAction="#handleAddButtonAction" prefWidth="150.0"
+                text="Adaugare">
+            <font>
+                <Font size="12.0"/>
+            </font>
+        </Button>
+        <Button onAction="#handleDeleteTypeButtonAction" mnemonicParsing="false"
+                prefWidth="150.0" text="Eliminare tip">
+            <font>
+                <Font size="12.0"/>
+            </font>
+        </Button>
+        <Button onAction="#handleDeleteMaterialButtonAction" layoutX="335.0"
+                layoutY="10.0" mnemonicParsing="false" prefWidth="150.0" text="Eliminare material">
+            <font>
+                <Font size="12.0"/>
+            </font>
+        </Button>
+        <Button onAction="#handleModifyPriceButtonAction" mnemonicParsing="false" prefWidth="150.0" text="Modificare pret">
+            <font>
+                <Font size="12.0"/>
+            </font>
+        </Button>
     </HBox>
 </VBox>

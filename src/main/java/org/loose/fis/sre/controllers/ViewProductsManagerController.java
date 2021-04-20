@@ -67,6 +67,12 @@ public class ViewProductsManagerController {
         materialSelected.forEach(materials::remove);
     }
 
+    public void handleModifyPriceButtonAction() throws Exception{
+        Stage window = (Stage) typeTable.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("modifyProduct.fxml"));
+        window.setScene(new Scene(root, 800,600));
+    }
+
     private ObservableList<ProductType> types = FXCollections.observableArrayList(ProductTypeService.productTypes());
     private ObservableList<Material> materials = FXCollections.observableArrayList(MaterialService.materials());
 }
