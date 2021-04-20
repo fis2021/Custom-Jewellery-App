@@ -49,4 +49,12 @@ public class ProductTypeService {
         }
         return list;
     }
+
+    public static void modifyPrice(String type, int newPrice) {
+        for(ProductType productType : productTypeRepository.find()){
+            if(Objects.equals(type, productType.getType())) {
+                productTypeRepository.update(eq("type", type), new ProductType(type, newPrice));
+            }
+        }
+    }
 }

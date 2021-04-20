@@ -28,7 +28,7 @@
     </HBox>
    <ChoiceBox fx:id="type" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
     <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="7">
-        <Button text="Modifica">
+        <Button onAction="#handleModifyButtonAction" text="Modifica">
          <font>
             <Font size="15.0" />
          </font></Button>

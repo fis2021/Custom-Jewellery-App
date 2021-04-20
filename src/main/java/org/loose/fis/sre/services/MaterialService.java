@@ -47,4 +47,12 @@ public class MaterialService {
         }
         return list;
     }
+
+    public static void modifyPrice(String name, int newPrice) {
+        for(Material material : materialRepository.find()){
+            if(Objects.equals(name, material.getName())) {
+                materialRepository.update(eq("name", name), new Material(name, newPrice));
+            }
+        }
+    }
 }

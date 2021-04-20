@@ -69,4 +69,25 @@ public class ModifyProductController {
             }
         }
     }
+
+    public void handleModifyButtonAction() throws Exception {
+        if(product.getValue() == null){
+            selectionMessage.setText("Nu este selectat niciun produs");
+            return;
+        }
+        if(newPrice.getText().equals("")){
+            selectionMessage.setText("Nu ati introdus niciun pret");
+            return;
+        }
+        if(type.getValue().equals("Produs")){
+            ProductTypeService.modifyPrice(product.getValue(), Integer.parseInt(newPrice.getText()));
+        }
+        else {
+            MaterialService.modifyPrice(product.getValue(), Integer.parseInt(newPrice.getText()));
+        }
+
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("viewProductsManager.fxml"));
+        Stage window = (Stage) type.getScene().getWindow();
+        window.setScene(new Scene(root, 800, 600));
+    }
 }

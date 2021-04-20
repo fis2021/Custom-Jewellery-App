@@ -26,7 +26,7 @@ public class ProductType {
         return price;
     }
 
-    public void serPret(int price) {
+    public void setPrice(int price) {
         this.price=price;
     }
 
