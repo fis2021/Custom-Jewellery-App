@@ -27,7 +27,7 @@ public class Material {
         return price;
     }
 
-    public void serPret(int price) {
+    public void setPrice(int price) {
         this.price=price;
     }
 
