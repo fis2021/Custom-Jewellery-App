@@ -14,7 +14,6 @@ import org.loose.fis.sre.services.MaterialService;
 import org.loose.fis.sre.services.ProductTypeService;
 
 import java.util.ArrayList;
-import java.util.concurrent.ExecutionException;
 
 public class ModifyProductController {
 
@@ -39,7 +38,7 @@ public class ModifyProductController {
 
     public void handleProductSelectAction() {
         if(previous != null){
-            if(previous.equals(type.getValue()) == false) {
+            if(!previous.equals(type.getValue())) {
                 product.getSelectionModel().clearSelection();
                 product.getItems().clear();
                 System.out.println("haha");
@@ -50,7 +49,7 @@ public class ModifyProductController {
                 selectionMessage.setText("Nu ati selectat inca tipul");
                 return;
             }
-            previous = type.getValue().toString();
+            previous = type.getValue();
             if (type.getValue().equals("Produs")) {
                 selectionMessage.setText("");
                 ArrayList<String> products = new ArrayList<>();
@@ -86,6 +85,12 @@ public class ModifyProductController {
             MaterialService.modifyPrice(product.getValue(), Integer.parseInt(newPrice.getText()));
         }
 
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("viewProductsManager.fxml"));
+        Stage window = (Stage) type.getScene().getWindow();
+        window.setScene(new Scene(root, 800, 600));
+    }
+
+    public void handleCancelButtonAction() throws Exception{
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("viewProductsManager.fxml"));
         Stage window = (Stage) type.getScene().getWindow();
         window.setScene(new Scene(root, 800, 600));

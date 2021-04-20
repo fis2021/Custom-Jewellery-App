@@ -33,7 +33,7 @@
             <Font size="15.0" />
          </font></Button>
     </HBox>
-   <Button mnemonicParsing="false" text="Anulare" GridPane.rowIndex="7">
+   <Button onAction="#handleCancelButtonAction" mnemonicParsing="false" text="Anulare" GridPane.rowIndex="7">
       <font>
          <Font size="15.0" />
       </font></Button>
