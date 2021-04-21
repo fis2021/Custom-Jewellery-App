@@ -73,6 +73,12 @@ public class ViewProductsManagerController {
         window.setScene(new Scene(root, 800,600));
     }
 
+    public void handleBackButtonAction() throws Exception{
+        Stage window = (Stage) typeTable.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/startManager.fxml"));
+        window.setScene(new Scene(root, 800,600));
+    }
+
     private ObservableList<ProductType> types = FXCollections.observableArrayList(ProductTypeService.productTypes());
     private ObservableList<Material> materials = FXCollections.observableArrayList(MaterialService.materials());
 }

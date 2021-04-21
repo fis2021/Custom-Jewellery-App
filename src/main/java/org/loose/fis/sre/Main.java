@@ -21,7 +21,7 @@ public class Main extends Application {
         UserService.initDatabase();
         ProductTypeService.initDatabase();
         MaterialService.initDatabase();
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/viewProductsManager.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/login.fxml"));
         primaryStage.setTitle("Custom Jewellery App");
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();
