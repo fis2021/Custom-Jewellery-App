@@ -3,14 +3,14 @@ package org.loose.fis.sre.model;
 import java.util.Objects;
 
 public class Order {
-    private User client;
+    private String client;
     private ProductType productType;
     private Material material;
     private String message;
     private int price;
     private String state;
 
-    public Order(User client,ProductType productType, Material material, String message) {
+    public Order(String client,ProductType productType, Material material, String message) {
         this.client=client;
         this.productType = productType;
         this.material = material;
@@ -19,10 +19,10 @@ public class Order {
         this.state="Asteptare";
     }
 
-    public User getClient(){
+    public String getClient(){
         return client;
     }
-    public void setClient(User client){
+    public void setClient(String client){
         this.client=client;
     }
     public ProductType getProductType() {

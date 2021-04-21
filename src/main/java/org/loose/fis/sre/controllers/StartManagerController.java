@@ -7,7 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class StartManager {
+public class StartManagerController {
 
     @FXML
     private Button logOutButton;

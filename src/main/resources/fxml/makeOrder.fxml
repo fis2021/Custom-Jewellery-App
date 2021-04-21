@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane alignment="center" hgap="15" prefHeight="600" prefWidth="800" vgap="15" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.MakeOrderController">
+    <padding>
+        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+    </padding>
+    <Text id="title-text" text="Plaseaza comanda:" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
+        <font>
+            <Font size="40.0" />
+        </font></Text>
+
+    <Label text="Tip: " GridPane.columnIndex="0" GridPane.rowIndex="1" />
+
+    <Label text="Material: " GridPane.columnIndex="0" GridPane.rowIndex="2" />
+
+    <ChoiceBox fx:id="material"  prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+    </ChoiceBox>
+
+    <Label text="Mesaj:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+
+    <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="4">
+        <TextField fx:id="message"  alignment="TOP_LEFT" />
+    </HBox>
+    <ChoiceBox fx:id="type" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="7">
+        <Button  text="Plaseaza comanda" onAction="#handleMakeOrderButtonAction">
+            <font>
+                <Font size="15.0" />
+            </font></Button>
+    </HBox>
+    <Button  mnemonicParsing="false" text="Anulare" GridPane.rowIndex="7" onAction="#handleCancelButtonAction">
+        <font>
+            <Font size="15.0" />
+        </font></Button>
+
+    <Text fx:id="orderMessage" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+    <columnConstraints>
+        <ColumnConstraints />
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+    </rowConstraints>
+</GridPane>

@@ -11,6 +11,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.loose.fis.sre.exceptions.AccountException;
 import org.loose.fis.sre.exceptions.IncorrectPasswordException;
+import org.loose.fis.sre.model.User;
 
 import static org.loose.fis.sre.services.UserService.getUserRole;
 
@@ -36,6 +37,7 @@ public class LoginController {
 
         try {
             String role = getUserRole(usernameField.getText(), passwordField.getText());
+            User.setCurrentUser(usernameField.getText());
             if(role.equals("Client")){
                 Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/startUser.fxml"));
                 Scene nextScene = new Scene(root, 800, 600);

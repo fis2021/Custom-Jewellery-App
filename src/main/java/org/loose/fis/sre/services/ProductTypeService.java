@@ -57,4 +57,15 @@ public class ProductTypeService {
             }
         }
     }
+
+    public static ProductType getProductType(String type){
+        for(ProductType productType : productTypeRepository.find())
+            if(Objects.equals(type, productType.getType()))
+                return productType;
+         return null;
+
+
+    }
+
+
 }

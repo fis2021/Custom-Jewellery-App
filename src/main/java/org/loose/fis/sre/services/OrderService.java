@@ -25,7 +25,7 @@ public class OrderService {
         orderRepository = database.getRepository(Order.class);
     }
 
-    public static void addOrder(User client, ProductType productType, Material material, String message) {
+    public static void addOrder(String client, ProductType productType, Material material, String message) {
         orderRepository.insert(new Order(client,productType,material,message));
     }
 
