@@ -37,13 +37,13 @@ public class LoginController {
         try {
             String role = getUserRole(usernameField.getText(), passwordField.getText());
             if(role.equals("Client")){
-                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("startUser.fxml"));
+                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/startUser.fxml"));
                 Scene nextScene = new Scene(root, 800, 600);
 
                 primary.setScene(nextScene);
             }
             else{
-                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("startManager.fxml"));
+                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/startManager.fxml"));
                 Scene nextScene = new Scene(root, 800, 600);
 
                 primary.setScene(nextScene);
@@ -56,7 +56,7 @@ public class LoginController {
     public void handleCreateAccountAction() throws Exception{
 
         Stage primary = (Stage) registrationMessage.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("register.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/register.fxml"));
         Scene nextScene = new Scene(root, 800, 600);
 
         primary.setScene(nextScene);

@@ -45,7 +45,7 @@ public class ViewProductsManagerController {
 
     public void handleAddButtonAction() throws Exception{
         Stage window = (Stage) typeTable.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("addProduct.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/addProduct.fxml"));
         window.setScene(new Scene(root, 800,600));
     }
 
@@ -69,7 +69,7 @@ public class ViewProductsManagerController {
 
     public void handleModifyPriceButtonAction() throws Exception{
         Stage window = (Stage) typeTable.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("modifyProduct.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/modifyProduct.fxml"));
         window.setScene(new Scene(root, 800,600));
     }
 
