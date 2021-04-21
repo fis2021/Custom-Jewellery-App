@@ -41,7 +41,7 @@ public class ModifyProductController {
             if(!previous.equals(type.getValue())) {
                 product.getSelectionModel().clearSelection();
                 product.getItems().clear();
-                System.out.println("haha");
+
             }
         }
         if(product.getItems().isEmpty()) {
@@ -70,10 +70,12 @@ public class ModifyProductController {
     }
 
     public void handleModifyButtonAction() throws Exception {
+
         if(product.getValue() == null){
             selectionMessage.setText("Nu este selectat niciun produs");
             return;
         }
+
         if(newPrice.getText().equals("")){
             selectionMessage.setText("Nu ati introdus niciun pret");
             return;

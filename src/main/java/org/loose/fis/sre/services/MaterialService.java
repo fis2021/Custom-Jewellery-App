@@ -55,4 +55,13 @@ public class MaterialService {
             }
         }
     }
+
+    public static Material getMaterial(String name){
+        for(Material material : materialRepository.find())
+            if(Objects.equals(name, material.getName()))
+                return material;
+        return null;
+
+
+    }
 }
