@@ -42,7 +42,7 @@ public class RegistrationController {
 
     public void handleBackAction() throws Exception{
         Stage primaryStage = (Stage) role.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/login.fxml"));
         Scene newScene = new Scene(root, 800, 600);
         primaryStage.setScene(newScene);
     }

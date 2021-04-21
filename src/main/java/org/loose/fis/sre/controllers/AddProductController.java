@@ -37,7 +37,7 @@ public class AddProductController {
                 ProductTypeService.checkTypeDoesNotAlreadyExist(name.getText());
                 ProductTypeService.addType(name.getText(), Integer.parseInt(price.getText()));
 
-                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("viewProductsManager.fxml"));
+                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/viewProductsManager.fxml"));
                 Stage window = (Stage) type.getScene().getWindow();
                 window.setScene(new Scene(root, 800, 600));
 
@@ -50,7 +50,7 @@ public class AddProductController {
                 MaterialService.checkMaterialDoesNotAlreadyExist(name.getText());
                 MaterialService.addMaterial(name.getText(), Integer.parseInt(price.getText()));
 
-                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("viewProductsManager.fxml"));
+                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/viewProductsManager.fxml"));
                 Stage window = (Stage) type.getScene().getWindow();
                 window.setScene(new Scene(root, 800, 600));
             }catch (Exception e) {
@@ -60,7 +60,7 @@ public class AddProductController {
     }
 
     public void handleCancelButtonAction() throws Exception{
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("viewProductsManager.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/viewProductsManager.fxml"));
         Stage window = (Stage) type.getScene().getWindow();
         window.setScene(new Scene(root, 800, 600));
     }

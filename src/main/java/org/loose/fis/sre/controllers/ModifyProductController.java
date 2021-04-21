@@ -85,13 +85,13 @@ public class ModifyProductController {
             MaterialService.modifyPrice(product.getValue(), Integer.parseInt(newPrice.getText()));
         }
 
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("viewProductsManager.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/viewProductsManager.fxml"));
         Stage window = (Stage) type.getScene().getWindow();
         window.setScene(new Scene(root, 800, 600));
     }
 
     public void handleCancelButtonAction() throws Exception{
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("viewProductsManager.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/viewProductsManager.fxml"));
         Stage window = (Stage) type.getScene().getWindow();
         window.setScene(new Scene(root, 800, 600));
     }
