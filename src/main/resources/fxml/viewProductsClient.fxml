@@ -5,8 +5,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.ViewProductsClientController">
-    <children>
+<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.ViewProductsClientController">
+    <Button onAction="#handleBackButtonAction" mnemonicParsing="false" text="Inapoi">
+        <VBox.margin>
+            <Insets left="15.0" top="15.0" />
+        </VBox.margin>
+    </Button>
+    <AnchorPane>
         <BorderPane prefHeight="600.0" prefWidth="400.0">
             <center>
                 <TableView fx:id="typeTable" prefHeight="600.0" prefWidth="330.0" BorderPane.alignment="BOTTOM_LEFT">
@@ -26,6 +31,7 @@
                </font>
             </Label>
          </top>
+
         </BorderPane>
         <BorderPane layoutX="400.0" prefHeight="600.0" prefWidth="400.0">
             <center>
@@ -46,5 +52,5 @@
                </font></Label>
          </top>
         </BorderPane>
-    </children>
-</AnchorPane>
+    </AnchorPane>
+</VBox>
