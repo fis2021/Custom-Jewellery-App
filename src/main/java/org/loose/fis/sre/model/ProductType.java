@@ -43,4 +43,8 @@ public class ProductType {
     public int hashCode() {
         return Objects.hash(type, price);
     }
+
+    public String toString(){
+        return type;
+    }
 }

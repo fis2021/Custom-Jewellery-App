@@ -3,6 +3,7 @@ package org.loose.fis.sre.model;
 import java.util.Objects;
 
 public class Order {
+    private long id;
     private String client;
     private ProductType productType;
     private Material material;
@@ -10,7 +11,10 @@ public class Order {
     private int price;
     private String state;
 
-    public Order(String client,ProductType productType, Material material, String message) {
+    public Order(){}
+
+    public Order(long id, String client,ProductType productType, Material material, String message) {
+        this.id = id;
         this.client=client;
         this.productType = productType;
         this.material = material;
@@ -19,12 +23,18 @@ public class Order {
         this.state="Asteptare";
     }
 
+    public long getId(){return id;}
+
+    public void setId(long id){ this.id = id;}
+
     public String getClient(){
         return client;
     }
+
     public void setClient(String client){
         this.client=client;
     }
+
     public ProductType getProductType() {
         return productType;
     }

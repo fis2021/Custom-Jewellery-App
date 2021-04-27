@@ -26,7 +26,7 @@ public class OrderService {
     }
 
     public static void addOrder(String client, ProductType productType, Material material, String message) {
-        orderRepository.insert(new Order(client,productType,material,message));
+        orderRepository.insert(new Order(orderRepository.size() ,client,productType,material,message));
     }
 
     public static ArrayList<Order> orders() {
