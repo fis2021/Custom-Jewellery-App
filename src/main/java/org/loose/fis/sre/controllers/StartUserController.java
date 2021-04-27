@@ -29,4 +29,10 @@ public class StartUserController {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/viewOrdersClient.fxml"));
         window.setScene(new Scene(root, 800,600));
     }
+
+    public void handleMakeOrderButtonAction() throws Exception{
+        Stage window = (Stage) logOutButton.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/makeOrder.fxml"));
+        window.setScene(new Scene(root, 800,600));
+    }
 }
