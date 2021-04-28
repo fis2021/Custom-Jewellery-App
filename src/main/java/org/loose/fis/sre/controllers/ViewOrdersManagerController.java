@@ -36,7 +36,7 @@ public class ViewOrdersManagerController {
     private TableColumn<Order, String> orderState;
 
     public void initialize() {
-        orderUser.setCellValueFactory(new PropertyValueFactory<>("currentUser"));
+        orderUser.setCellValueFactory(new PropertyValueFactory<>("client"));
         productTypeOrder.setCellValueFactory(new PropertyValueFactory<>("productType"));
         materialOrder.setCellValueFactory(new PropertyValueFactory<>("material"));
         orderMessage.setCellValueFactory(new PropertyValueFactory<>("message"));
@@ -44,6 +44,8 @@ public class ViewOrdersManagerController {
         orderState.setCellValueFactory(new PropertyValueFactory<>("state"));
 
         orderTable.setItems(orders);
+
+        update();
     }
 
     ObservableList<Order> orders = FXCollections.observableArrayList(OrderService.orders());
@@ -60,5 +62,27 @@ public class ViewOrdersManagerController {
         Stage window = (Stage) backButton.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/startManager.fxml"));
         window.setScene(new Scene(root, 800, 600));
+    }
+
+    private void update(){
+        orderState.setCellFactory(column -> new TableCell<>() {
+            @Override
+            protected void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty);
+
+                setText(item);
+
+                TableRow<Order> currentRow = getTableRow();
+
+                if (!isEmpty()) {
+                    if (item.equals("Asteptare"))
+                        currentRow.setStyle("-fx-background-color: yellow");
+                    else if (item.equals("Acceptat"))
+                        currentRow.setStyle("-fx-background-color: #49941b");
+                    else
+                        currentRow.setStyle("-fx-background-color: red");
+                }
+            }
+        });
     }
 }
