@@ -70,7 +70,22 @@ public class ViewOrdersManagerController {
     }
 
     public void handleRejectButtonAction() {
-        //TODO
+        int counter = 0;
+        ObservableList<Order> typesSelected;
+        typesSelected = orderTable.getSelectionModel().getSelectedItems();
+        for(Order order : typesSelected) {
+            if(order.getState().equals("Asteptare")) {
+                OrderService.rejectOrder(order);
+                counter++;
+            }
+        }
+
+        if(counter == 0)
+            orderAcceptMessage.setText("Nu se mai poate modifica aceasta comanda");
+        else {
+            orderAcceptMessage.setText("");
+            update();
+        }
     }
 
     public void handleBackButtonAction() throws Exception {

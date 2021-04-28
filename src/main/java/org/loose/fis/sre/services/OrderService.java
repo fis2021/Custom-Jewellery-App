@@ -43,4 +43,13 @@ public class OrderService {
             }
         }
     }
+
+    public static void rejectOrder(Order order){
+        for(Order order1 : orderRepository.find()){
+            if(order.getId() == order1.getId()) {
+                order.setState("Respins");
+                orderRepository.update(eq("id", order.getId()), order);
+            }
+        }
+    }
 }
