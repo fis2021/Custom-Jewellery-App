@@ -44,5 +44,10 @@ public class Material {
     public int hashCode() {
         return Objects.hash(name, price);
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }
 
