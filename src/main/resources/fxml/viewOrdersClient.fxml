@@ -1,10 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.ViewOrdersClientController">
-    <children>
-        <Button onAction="#handleBackButtonAction" fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Inapoi" />
-    </children>
-</AnchorPane>
+<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.ViewOrdersClientController">
+    <Button onAction="#handleBackButtonAction" mnemonicParsing="false" text="Inapoi">
+        <VBox.margin>
+            <Insets top="20.0" left="20.0"/>
+        </VBox.margin>
+    </Button>
+
+    <BorderPane prefHeight="600.0" prefWidth="800.0">
+        <center>
+            <TableView fx:id="orderTable" prefHeight="600.0" prefWidth="800.0" BorderPane.alignment="BOTTOM_LEFT">
+                <columns>
+                    <TableColumn fx:id="productTypeOrder" prefWidth="130.0" text="Tip" />
+                    <TableColumn fx:id="materialOrder" prefWidth="130.0" text="Material" />
+                    <TableColumn fx:id="orderMessage" prefWidth="180.0" text="Mesaj"/>
+                    <TableColumn fx:id="orderPrice" prefWidth="130.0" text="Pret" />
+                    <TableColumn fx:id="orderState" prefWidth="130.0" text="Stare" />
+                </columns>
+            </TableView>
+        </center>
+        <padding>
+            <Insets bottom="50.0" left="50.0" right="50.0" top="20.0" />
+        </padding>
+        <top>
+            <Label alignment="CENTER" prefHeight="5.0" prefWidth="260.0" text="Comenzi" BorderPane.alignment="CENTER">
+                <font>
+                    <Font size="20.0" />
+                </font>
+            </Label>
+        </top>
+    </BorderPane>
+</VBox>
