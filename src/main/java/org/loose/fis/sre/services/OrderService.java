@@ -35,6 +35,15 @@ public class OrderService {
         return list;
     }
 
+    public static ArrayList<Order> orders(String currentUser) {
+        ArrayList<Order> list = new ArrayList<>();
+        for(Order order : orderRepository.find()) {
+            if(order.getClient().equals(currentUser))
+                list.add(order);
+        }
+        return list;
+    }
+
     public static void acceptOrder(Order order){
         for(Order order1 : orderRepository.find()){
             if(order.getId() == order1.getId()) {
