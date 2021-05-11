@@ -61,7 +61,7 @@ public class ViewOrdersClientController {
         });
     }
 
-    ObservableList<Order> orders = FXCollections.observableArrayList(OrderService.orders(User.getCurrentUser()));
+    ObservableList<Order> orders = FXCollections.observableArrayList(OrderService.getAllOrders(User.getCurrentUser()));
 
     public void handleBackButtonAction() throws Exception{
         Stage window = (Stage) orderTable.getScene().getWindow();

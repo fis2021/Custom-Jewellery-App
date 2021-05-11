@@ -48,7 +48,7 @@ public class ViewOrdersManagerController {
         update();
     }
 
-    ObservableList<Order> orders = FXCollections.observableArrayList(OrderService.orders());
+    ObservableList<Order> orders = FXCollections.observableArrayList(OrderService.getAllOrders());
 
     public void handleAcceptButtonAction() {
         int counter = 0;
