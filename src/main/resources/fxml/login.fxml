@@ -16,18 +16,18 @@
 
     <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
 
-    <TextField fx:id="usernameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    <TextField fx:id="usernameField" id="username" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
     <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
 
-    <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    <PasswordField fx:id="passwordField" id="password" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
-    <Text fx:id="registrationMessage" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+    <Text fx:id="registrationMessage" id="registrationMessage" GridPane.columnIndex="1" GridPane.rowIndex="7" />
     <HBox alignment="bottom_left" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="5">
-        <Button fx:id="loginButton" onAction="#handleLoginAction" text="Log in" />
+        <Button fx:id="loginButton" id="loginButton" onAction="#handleLoginAction" text="Log in" />
     </HBox>
     <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="5">
-        <Button fx:id="createAccountButton" onAction="#handleCreateAccountAction" text="Create an account" />
+        <Button fx:id="createAccountButton" id="createAccountButton" onAction="#handleCreateAccountAction" text="Create an account" />
     </HBox>
    <columnConstraints>
       <ColumnConstraints />
