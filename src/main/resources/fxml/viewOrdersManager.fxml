@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.ViewOrdersManagerController">
+<VBox id="viewOrdersFile" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.ViewOrdersManagerController">
    <HBox alignment="BOTTOM_LEFT" prefHeight="60.0" prefWidth="200.0" style="-fx-spacing: 300;">
       <Button fx:id="backButton" mnemonicParsing="false" onAction="#handleBackButtonAction" text="Inapoi">
          <HBox.margin>
