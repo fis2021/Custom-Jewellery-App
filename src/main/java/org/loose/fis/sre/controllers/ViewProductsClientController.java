@@ -47,7 +47,7 @@ public class ViewProductsClientController {
     }
 
     private ObservableList<ProductType> types = FXCollections.observableArrayList(ProductTypeService.productTypes());
-    private ObservableList<Material> materials = FXCollections.observableArrayList(MaterialService.materials());
+    private ObservableList<Material> materials = FXCollections.observableArrayList(MaterialService.getAllMaterials());
 
     public void handleBackButtonAction() throws Exception{
         Stage window = (Stage) materialTable.getScene().getWindow();

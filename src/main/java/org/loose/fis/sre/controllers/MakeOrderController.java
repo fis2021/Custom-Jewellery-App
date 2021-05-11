@@ -36,7 +36,7 @@ public class MakeOrderController {
         type.getItems().addAll(types);
 
         ArrayList<String> materials = new ArrayList<>();
-        for (Material material : MaterialService.materials())
+        for (Material material : MaterialService.getAllMaterials())
             materials.add(material.getName());
         material.getItems().addAll(materials);
 

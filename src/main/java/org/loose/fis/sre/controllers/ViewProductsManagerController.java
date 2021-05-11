@@ -80,5 +80,5 @@ public class ViewProductsManagerController {
     }
 
     private ObservableList<ProductType> types = FXCollections.observableArrayList(ProductTypeService.productTypes());
-    private ObservableList<Material> materials = FXCollections.observableArrayList(MaterialService.materials());
+    private ObservableList<Material> materials = FXCollections.observableArrayList(MaterialService.getAllMaterials());
 }

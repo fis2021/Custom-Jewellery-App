@@ -40,7 +40,7 @@ public class MaterialService {
         }
     }
 
-    public static ArrayList<Material> materials() {
+    public static ArrayList<Material> getAllMaterials() {
         ArrayList<Material> list = new ArrayList<>();
         for(Material material : materialRepository.find()) {
             list.add(material);

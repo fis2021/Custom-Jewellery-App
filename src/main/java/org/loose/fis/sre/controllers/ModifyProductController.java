@@ -61,7 +61,7 @@ public class ModifyProductController {
             else {
                 selectionMessage.setText("");
                 ArrayList<String> materials = new ArrayList<>();
-                for (Material material : MaterialService.materials())
+                for (Material material : MaterialService.getAllMaterials())
                     materials.add(material.getName());
                 product.getItems().addAll(materials);
                 product.show();
