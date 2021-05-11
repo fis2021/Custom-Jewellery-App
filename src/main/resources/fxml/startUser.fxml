@@ -23,7 +23,7 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#handleMakeOrderButtonAction" prefWidth="150.0" text="Comanda">
+            <Button alignment="CENTER" id="orderButton" mnemonicParsing="false" onAction="#handleMakeOrderButtonAction" prefWidth="150.0" text="Comanda">
                <font>
                   <Font size="18.0" />
                </font>
@@ -32,12 +32,12 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="150.0" prefWidth="600.0" style="-fx-spacing: 150;">
          <children>
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#handleViewProductsButtonAction" prefWidth="150.0" text="Lista produse">
+            <Button alignment="CENTER" id="listProductsButton" mnemonicParsing="false" onAction="#handleViewProductsButtonAction" prefWidth="150.0" text="Lista produse">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#handleViewOrdersButtonAction" prefWidth="150.0" text="Lista comenzi">
+            <Button alignment="CENTER" id="listOrdersButton" mnemonicParsing="false" onAction="#handleViewOrdersButtonAction" prefWidth="150.0" text="Lista comenzi">
                <font>
                   <Font size="18.0" />
                </font>
