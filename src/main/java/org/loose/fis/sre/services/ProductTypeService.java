@@ -42,7 +42,7 @@ public class ProductTypeService {
         }
     }
 
-    public static ArrayList<ProductType> productTypes() {
+    public static ArrayList<ProductType> getAllProductTypes() {
         ArrayList<ProductType> list = new ArrayList<>();
         for(ProductType productType : productTypeRepository.find()) {
             list.add(productType);

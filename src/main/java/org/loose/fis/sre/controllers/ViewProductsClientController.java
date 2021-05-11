@@ -46,7 +46,7 @@ public class ViewProductsClientController {
         materialTable.setItems(materials);
     }
 
-    private ObservableList<ProductType> types = FXCollections.observableArrayList(ProductTypeService.productTypes());
+    private ObservableList<ProductType> types = FXCollections.observableArrayList(ProductTypeService.getAllProductTypes());
     private ObservableList<Material> materials = FXCollections.observableArrayList(MaterialService.getAllMaterials());
 
     public void handleBackButtonAction() throws Exception{

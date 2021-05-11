@@ -79,6 +79,6 @@ public class ViewProductsManagerController {
         window.setScene(new Scene(root, 800,600));
     }
 
-    private ObservableList<ProductType> types = FXCollections.observableArrayList(ProductTypeService.productTypes());
+    private ObservableList<ProductType> types = FXCollections.observableArrayList(ProductTypeService.getAllProductTypes());
     private ObservableList<Material> materials = FXCollections.observableArrayList(MaterialService.getAllMaterials());
 }

@@ -53,7 +53,7 @@ public class ModifyProductController {
             if (type.getValue().equals("Produs")) {
                 selectionMessage.setText("");
                 ArrayList<String> products = new ArrayList<>();
-                for (ProductType productType : ProductTypeService.productTypes())
+                for (ProductType productType : ProductTypeService.getAllProductTypes())
                     products.add(productType.getType());
                 product.getItems().addAll(products);
                 product.show();

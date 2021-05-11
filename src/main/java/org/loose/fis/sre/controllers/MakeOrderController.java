@@ -31,7 +31,7 @@ public class MakeOrderController {
     @FXML
     public void initialize() {
         ArrayList<String> types = new ArrayList<>();
-        for (ProductType productType : ProductTypeService.productTypes())
+        for (ProductType productType : ProductTypeService.getAllProductTypes())
             types.add(productType.getType());
         type.getItems().addAll(types);
 
