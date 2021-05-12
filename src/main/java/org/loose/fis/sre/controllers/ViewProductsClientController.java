@@ -16,6 +16,8 @@ import org.loose.fis.sre.model.ProductType;
 import org.loose.fis.sre.services.MaterialService;
 import org.loose.fis.sre.services.ProductTypeService;
 
+import java.util.List;
+
 public class ViewProductsClientController {
     @FXML
     private Button backButton;
@@ -53,5 +55,13 @@ public class ViewProductsClientController {
         Stage window = (Stage) materialTable.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/startUser.fxml"));
         window.setScene(new Scene(root, 800,600));
+    }
+
+    public List<ProductType> getProductTypesFromTable() {
+        return typeTable.getItems();
+    }
+
+    public List<Material> getMaterialsFromTable() {
+        return materialTable.getItems();
     }
 }
