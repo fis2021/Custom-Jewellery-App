@@ -13,6 +13,8 @@ import javafx.stage.Stage;
 import org.loose.fis.sre.model.Order;
 import org.loose.fis.sre.services.OrderService;
 
+import java.util.List;
+
 public class ViewOrdersManagerController {
 
     @FXML
@@ -114,5 +116,9 @@ public class ViewOrdersManagerController {
                 }
             }
         });
+    }
+
+    public List<Order> getOrdersFromTable() {
+        return orderTable.getItems();
     }
 }

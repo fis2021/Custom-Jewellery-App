@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane alignment="center" hgap="15" prefHeight="600" prefWidth="800" vgap="15" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.ModifyProductController">
+<GridPane id="modifyProductFile" alignment="center" hgap="15" prefHeight="600" prefWidth="800" vgap="15" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.ModifyProductController">
     <padding>
         <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
     </padding>
@@ -18,27 +18,27 @@
 
     <Label text="Produs:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
 
-    <ChoiceBox fx:id="product" onMouseClicked="#handleProductSelectAction" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+    <ChoiceBox fx:id="product" id="product" onMouseClicked="#handleProductSelectAction" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
     </ChoiceBox>
 
     <Label text="Pret nou:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
 
     <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="4">
-        <TextField fx:id="newPrice"  alignment="TOP_LEFT" />
+        <TextField fx:id="newPrice" id="price"  alignment="TOP_LEFT" />
     </HBox>
-   <ChoiceBox fx:id="type" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+   <ChoiceBox fx:id="type" id="type" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
     <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="7">
-        <Button onAction="#handleModifyButtonAction" text="Modifica">
+        <Button id="modifyButton" onAction="#handleModifyButtonAction" text="Modifica">
          <font>
             <Font size="15.0" />
          </font></Button>
     </HBox>
-   <Button onAction="#handleCancelButtonAction" mnemonicParsing="false" text="Anulare" GridPane.rowIndex="7">
+   <Button id="cancelButton" onAction="#handleCancelButtonAction" mnemonicParsing="false" text="Anulare" GridPane.rowIndex="7">
       <font>
          <Font size="15.0" />
       </font></Button>
 
-    <Text fx:id="selectionMessage" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+    <Text fx:id="selectionMessage" id="selectionMessage" GridPane.columnIndex="1" GridPane.rowIndex="8" />
     <columnConstraints>
         <ColumnConstraints />
         <ColumnConstraints />

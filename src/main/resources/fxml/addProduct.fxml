@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane alignment="center" hgap="20" prefHeight="600" prefWidth="800" vgap="20" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.AddProductController">
+<GridPane id="addProductFile" alignment="center" hgap="20" prefHeight="600" prefWidth="800" vgap="20" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.AddProductController">
     <padding>
         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
     </padding>
@@ -15,7 +15,7 @@
             <Font size="30.0" />
         </font></Label>
 
-    <TextField fx:id="name" GridPane.columnIndex="1" GridPane.rowIndex="1">
+    <TextField fx:id="name" id="name" GridPane.columnIndex="1" GridPane.rowIndex="1">
         <font>
             <Font size="20.0" />
         </font></TextField>
@@ -25,7 +25,7 @@
             <Font size="30.0" />
         </font></Label>
 
-    <TextField fx:id="price" GridPane.columnIndex="1" GridPane.rowIndex="2">
+    <TextField fx:id="price" id="price" GridPane.columnIndex="1" GridPane.rowIndex="2">
         <font>
             <Font size="20.0" />
         </font></TextField>
@@ -36,20 +36,20 @@
             <Font size="30.0" />
         </font></Label>
 
-    <ChoiceBox fx:id="type" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+    <ChoiceBox fx:id="type" id="type" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
     </ChoiceBox>
 
-    <Text fx:id="addMessage" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+    <Text fx:id="addMessage" id="addMessage" GridPane.columnIndex="1" GridPane.rowIndex="5" />
 
     <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="4">
-        <Button onAction="#handleCancelButtonAction" text="Anulare">
+        <Button id="cancelButton" onAction="#handleCancelButtonAction" text="Anulare">
             <font>
                 <Font size="20.0" />
             </font></Button>
     </HBox>
 
     <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="4">
-        <Button onAction="#handleAddButtonAction" text="Adaugare">
+        <Button id="addButton" onAction="#handleAddButtonAction" text="Adaugare">
             <font>
                 <Font size="20.0" />
             </font></Button>

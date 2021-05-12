@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 
 <VBox id="viewProductsManagerFile" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.ViewProductsManagerController">
-   <Button onAction="#handleBackButtonAction" mnemonicParsing="false" text="Inapoi">
+   <Button onAction="#handleBackButtonAction" id="backButton" mnemonicParsing="false" text="Inapoi">
       <VBox.margin>
          <Insets left="15.0" top="15.0" />
       </VBox.margin>
@@ -61,22 +61,22 @@
         </children>
     </AnchorPane>
     <HBox alignment="TOP_CENTER" prefHeight="120.0" prefWidth="800.0" style="-fx-spacing: 50;">
-        <Button mnemonicParsing="false" onAction="#handleAddButtonAction" prefWidth="150.0" text="Adaugare">
+        <Button id="addButton" mnemonicParsing="false" onAction="#handleAddButtonAction" prefWidth="150.0" text="Adaugare">
             <font>
                 <Font size="12.0" />
             </font>
         </Button>
-        <Button mnemonicParsing="false" onAction="#handleDeleteTypeButtonAction" prefWidth="150.0" text="Eliminare tip">
+        <Button id="deleteTypeButton" mnemonicParsing="false" onAction="#handleDeleteTypeButtonAction" prefWidth="150.0" text="Eliminare tip">
             <font>
                 <Font size="12.0" />
             </font>
         </Button>
-        <Button layoutX="335.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleDeleteMaterialButtonAction" prefWidth="150.0" text="Eliminare material">
+        <Button id="deleteMaterialButton" layoutX="335.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleDeleteMaterialButtonAction" prefWidth="150.0" text="Eliminare material">
             <font>
                 <Font size="12.0" />
             </font>
         </Button>
-        <Button mnemonicParsing="false" onAction="#handleModifyPriceButtonAction" prefWidth="150.0" text="Modificare pret">
+        <Button id="modifyButton" mnemonicParsing="false" onAction="#handleModifyPriceButtonAction" prefWidth="150.0" text="Modificare pret">
             <font>
                 <Font size="12.0" />
             </font>
