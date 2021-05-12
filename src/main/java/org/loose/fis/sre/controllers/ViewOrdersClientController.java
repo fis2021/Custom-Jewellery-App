@@ -16,6 +16,8 @@ import org.loose.fis.sre.model.Order;
 import org.loose.fis.sre.model.User;
 import org.loose.fis.sre.services.OrderService;
 
+import java.util.List;
+
 public class ViewOrdersClientController {
 
     @FXML
@@ -67,5 +69,10 @@ public class ViewOrdersClientController {
         Stage window = (Stage) orderTable.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/startUser.fxml"));
         window.setScene(new Scene(root, 800,600));
+    }
+
+    public List<Order> getAllOrdersFromTable()
+    {
+        return orderTable.getItems();
     }
 }
