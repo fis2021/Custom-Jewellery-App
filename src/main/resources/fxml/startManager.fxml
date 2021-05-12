@@ -21,12 +21,12 @@
       </BorderPane>
       <HBox alignment="CENTER" prefHeight="150.0" prefWidth="600.0" style="-fx-spacing: 150;">
          <children>
-            <Button onAction="#handleViewProductsButtonAction" alignment="CENTER" mnemonicParsing="false" prefWidth="150.0" text="Lista produse">
+            <Button onAction="#handleViewProductsButtonAction" id="viewProductsButton" alignment="CENTER" mnemonicParsing="false" prefWidth="150.0" text="Lista produse">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button onAction="#handleViewOrdersButtonAction" alignment="CENTER" mnemonicParsing="false" prefWidth="150.0" text="Comenzi">
+            <Button onAction="#handleViewOrdersButtonAction" id="viewOrdersButton" alignment="CENTER" mnemonicParsing="false" prefWidth="150.0" text="Comenzi">
                <font>
                   <Font size="18.0" />
                </font>
@@ -35,7 +35,7 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="160.0" prefWidth="200.0">
          <children>
-            <Button fx:id="logOutButton" mnemonicParsing="false" onAction="#handleLodOutButtonAction" prefWidth="150.0" text="Log out">
+            <Button fx:id="logOutButton" id="logOutButton" mnemonicParsing="false" onAction="#handleLodOutButtonAction" prefWidth="150.0" text="Log out">
                <font>
                   <Font size="18.0" />
                </font>
