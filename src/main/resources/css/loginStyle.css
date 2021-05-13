@@ -1,0 +1,53 @@
+.login{
+    -fx-background-image: url('../images/jewellery_background.jpg');
+    -fx-background-size: 800 600;
+}
+
+.text-field{
+    -fx-background-radius: 40px;
+    -fx-pref-width: 350;
+    -fx-font-size: 17;
+}
+
+.title {
+    -fx-font-size: 45;
+    -fx-effect: dropshadow(one-pass-box, dimgrey, 10, 0.3, 2, 2);
+}
+
+.button {
+    -fx-background-radius: 40px;
+    -fx-padding: 10;
+    -fx-font-size: 24;
+    -fx-background-color:
+            linear-gradient(#f1ecec, #e3dddd),
+            linear-gradient(#bfbdbd 50%, #d0c9c9 20%, #a49d9d 100%),
+            linear-gradient(#d0cccc 0%, #f6f6f6 50%);
+}
+
+.button:hover {
+    -fx-background-color: #e7e1e1;
+}
+
+.button:armed {
+    -fx-background-color: #bfbcbc;
+}
+
+.choice-box {
+    -fx-background-color: white;
+    -fx-font-size: 20;
+}
+
+.choice-box:hover {
+    -fx-background-color: #e7e1e1;
+}
+
+#registrationMessage {
+    -fx-font-size: 20;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(one-pass-box, dimgrey, 10, 0.3, 2, 2);
+}
+
+#roleText {
+    -fx-font-size: 25;
+    -fx-effect: dropshadow(one-pass-box, dimgrey, 10, 0.3, 2, 2);
+}
