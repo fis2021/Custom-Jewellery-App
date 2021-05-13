@@ -13,6 +13,8 @@ import javafx.stage.Stage;
 import org.loose.fis.sre.model.Order;
 import org.loose.fis.sre.services.OrderService;
 
+import java.util.List;
+
 public class ViewOrdersManagerController {
 
     @FXML
@@ -48,7 +50,7 @@ public class ViewOrdersManagerController {
         update();
     }
 
-    ObservableList<Order> orders = FXCollections.observableArrayList(OrderService.orders());
+    ObservableList<Order> orders = FXCollections.observableArrayList(OrderService.getAllOrders());
 
     public void handleAcceptButtonAction() {
         int counter = 0;
@@ -114,5 +116,9 @@ public class ViewOrdersManagerController {
                 }
             }
         });
+    }
+
+    public List<Order> getOrdersFromTable() {
+        return orderTable.getItems();
     }
 }

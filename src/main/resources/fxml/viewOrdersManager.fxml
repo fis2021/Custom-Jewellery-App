@@ -5,14 +5,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.ViewOrdersManagerController">
+<VBox id="viewOrdersFile" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.ViewOrdersManagerController">
    <HBox alignment="BOTTOM_LEFT" prefHeight="60.0" prefWidth="200.0" style="-fx-spacing: 300;">
-      <Button fx:id="backButton" mnemonicParsing="false" onAction="#handleBackButtonAction" text="Inapoi">
+      <Button fx:id="backButton" id="backButton" mnemonicParsing="false" onAction="#handleBackButtonAction" text="Inapoi">
          <HBox.margin>
             <Insets left="15.0"/>
          </HBox.margin>
       </Button>
-      <Text fx:id="orderAcceptMessage" />
+      <Text fx:id="orderAcceptMessage" id="orderAcceptMessage"/>
    </HBox>
 
    <BorderPane prefHeight="500.0" prefWidth="800.0">
@@ -40,11 +40,11 @@
       </top>
    </BorderPane>
    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 200;">
-      <Button onAction="#handleAcceptButtonAction" mnemonicParsing="false" text="Accepta">
+      <Button onAction="#handleAcceptButtonAction" id="acceptButton" mnemonicParsing="false" text="Accepta">
          <font>
             <Font size="20.0" />
          </font></Button>
-      <Button onAction="#handleRejectButtonAction" mnemonicParsing="false" text="Refuza">
+      <Button onAction="#handleRejectButtonAction" id="rejectButton" mnemonicParsing="false" text="Refuza">
          <font>
             <Font size="20.0" />
          </font></Button>

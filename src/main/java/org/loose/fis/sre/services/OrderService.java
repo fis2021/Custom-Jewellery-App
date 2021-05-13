@@ -14,9 +14,10 @@ import static org.loose.fis.sre.services.FileSystemService.getPathToFile;
 public class OrderService {
 
     private static ObjectRepository<Order> orderRepository;
+    public static Nitrite database;
 
     public static void initDatabase() {
-        Nitrite database = Nitrite.builder()
+        database = Nitrite.builder()
                 .filePath(getPathToFile("orders.db").toFile())
                 .openOrCreate("test", "test");
 
@@ -27,7 +28,7 @@ public class OrderService {
         orderRepository.insert(new Order(orderRepository.size() ,client,productType,material,message));
     }
 
-    public static ArrayList<Order> orders() {
+    public static ArrayList<Order> getAllOrders() {
         ArrayList<Order> list = new ArrayList<>();
         for(Order order : orderRepository.find()) {
             list.add(order);
@@ -35,7 +36,7 @@ public class OrderService {
         return list;
     }
 
-    public static ArrayList<Order> orders(String currentUser) {
+    public static ArrayList<Order> getAllOrders(String currentUser) {
         ArrayList<Order> list = new ArrayList<>();
         for(Order order : orderRepository.find()) {
             if(order.getClient().equals(currentUser))
@@ -60,5 +61,10 @@ public class OrderService {
                 orderRepository.update(eq("id", order.getId()), order);
             }
         }
+    }
+
+    public static void close() {
+        orderRepository.close();
+        database.close();
     }
 }

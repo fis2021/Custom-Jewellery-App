@@ -16,6 +16,8 @@ import org.loose.fis.sre.model.ProductType;
 import org.loose.fis.sre.services.MaterialService;
 import org.loose.fis.sre.services.ProductTypeService;
 
+import java.util.List;
+
 public class ViewProductsClientController {
     @FXML
     private Button backButton;
@@ -46,12 +48,20 @@ public class ViewProductsClientController {
         materialTable.setItems(materials);
     }
 
-    private ObservableList<ProductType> types = FXCollections.observableArrayList(ProductTypeService.productTypes());
-    private ObservableList<Material> materials = FXCollections.observableArrayList(MaterialService.materials());
+    private ObservableList<ProductType> types = FXCollections.observableArrayList(ProductTypeService.getAllProductTypes());
+    private ObservableList<Material> materials = FXCollections.observableArrayList(MaterialService.getAllMaterials());
 
     public void handleBackButtonAction() throws Exception{
         Stage window = (Stage) materialTable.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/startUser.fxml"));
         window.setScene(new Scene(root, 800,600));
+    }
+
+    public List<ProductType> getProductTypesFromTable() {
+        return typeTable.getItems();
+    }
+
+    public List<Material> getMaterialsFromTable() {
+        return materialTable.getItems();
     }
 }

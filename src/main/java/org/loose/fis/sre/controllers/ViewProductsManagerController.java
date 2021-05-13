@@ -15,6 +15,8 @@ import org.loose.fis.sre.model.ProductType;
 import org.loose.fis.sre.services.MaterialService;
 import org.loose.fis.sre.services.ProductTypeService;
 
+import java.util.List;
+
 public class ViewProductsManagerController {
 
     @FXML
@@ -79,6 +81,14 @@ public class ViewProductsManagerController {
         window.setScene(new Scene(root, 800,600));
     }
 
-    private ObservableList<ProductType> types = FXCollections.observableArrayList(ProductTypeService.productTypes());
-    private ObservableList<Material> materials = FXCollections.observableArrayList(MaterialService.materials());
+    private ObservableList<ProductType> types = FXCollections.observableArrayList(ProductTypeService.getAllProductTypes());
+    private ObservableList<Material> materials = FXCollections.observableArrayList(MaterialService.getAllMaterials());
+
+    public List<ProductType> getProductTypesFromTable() {
+        return typeTable.getItems();
+    }
+
+    public List<Material> getMaterialsFromTable() {
+        return materialTable.getItems();
+    }
 }

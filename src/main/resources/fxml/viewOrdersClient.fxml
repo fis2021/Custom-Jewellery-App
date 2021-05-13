@@ -7,8 +7,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.ViewOrdersClientController">
-    <Button onAction="#handleBackButtonAction" mnemonicParsing="false" text="Inapoi">
+<VBox prefHeight="600.0" id="ordersClientFile" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.ViewOrdersClientController">
+    <Button onAction="#handleBackButtonAction" id="backButton" mnemonicParsing="false" text="Inapoi">
         <VBox.margin>
             <Insets top="20.0" left="20.0"/>
         </VBox.margin>
