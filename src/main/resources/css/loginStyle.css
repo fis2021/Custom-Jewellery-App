@@ -3,6 +3,11 @@
     -fx-background-size: 800 600;
 }
 
+.register {
+    -fx-background-image: url('../images/register_background.jpg');
+    -fx-background-size: 800 600;
+}
+
 .text-field{
     -fx-background-radius: 40px;
     -fx-pref-width: 350;
