@@ -14,9 +14,10 @@ import static org.loose.fis.sre.services.FileSystemService.getPathToFile;
 public class OrderService {
 
     private static ObjectRepository<Order> orderRepository;
+    public static Nitrite database;
 
     public static void initDatabase() {
-        Nitrite database = Nitrite.builder()
+        database = Nitrite.builder()
                 .filePath(getPathToFile("orders.db").toFile())
                 .openOrCreate("test", "test");
 
@@ -60,5 +61,10 @@ public class OrderService {
                 orderRepository.update(eq("id", order.getId()), order);
             }
         }
+    }
+
+    public static void close() {
+        orderRepository.close();
+        database.close();
     }
 }

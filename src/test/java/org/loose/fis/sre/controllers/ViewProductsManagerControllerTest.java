@@ -5,6 +5,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.apache.commons.io.FileUtils;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -24,8 +25,6 @@ import static org.testfx.assertions.api.Assertions.assertThat;
 @ExtendWith(ApplicationExtension.class)
 class ViewProductsManagerControllerTest {
 
-    private static final String CLIENT = "client";
-    private static final String MESSAGE = "message";
     private static final String TYPE = "type";
     private static final String MATERIAL = "material";
     private static final int PRICE = 0;
@@ -38,22 +37,24 @@ class ViewProductsManagerControllerTest {
 
     @BeforeEach
     void setUp(){
-        FileSystemService.APPLICATION_FOLDER = ".test-registration-example";
+        FileSystemService.APPLICATION_FOLDER = ".test-jewellery-databases";
+    }
+
+    @AfterEach
+    void tearDown() {
+        MaterialService.close();
+        ProductTypeService.close();
     }
 
     @Start
     void start(Stage primaryStage) throws Exception {
-        FileSystemService.APPLICATION_FOLDER = ".test-registration-example";
+        FileSystemService.APPLICATION_FOLDER = ".test-jewellery-databases";
         FileUtils.cleanDirectory(FileSystemService.getApplicationHomeFolder().toFile());
         ProductTypeService.initDatabase();
         MaterialService.initDatabase();
-        OrderService.initDatabase();
         ProductTypeService.addType(TYPE, PRICE);
         MaterialService.addMaterial(MATERIAL, PRICE);
 
-        ProductType productType = ProductTypeService.getAllProductTypes().get(0);
-        Material material = MaterialService.getAllMaterials().get(0);
-        OrderService.addOrder(CLIENT, productType, material, MESSAGE);
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("fxml/viewProductsManager.fxml"));
         Parent root = fxmlLoader.load();
         controller = fxmlLoader.getController();

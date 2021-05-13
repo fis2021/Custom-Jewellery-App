@@ -5,6 +5,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.apache.commons.io.FileUtils;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -19,11 +20,18 @@ class StartManagerControllerTest {
 
     @BeforeEach
     void setUp() throws Exception {
-        FileSystemService.APPLICATION_FOLDER = ".test-registration-example";
+        FileSystemService.APPLICATION_FOLDER = ".test-jewellery-databases";
         FileUtils.cleanDirectory(FileSystemService.getApplicationHomeFolder().toFile());
         ProductTypeService.initDatabase();
         MaterialService.initDatabase();
         OrderService.initDatabase();
+    }
+
+    @AfterEach
+    void tearDown() {
+        OrderService.close();
+        MaterialService.close();
+        ProductTypeService.close();
     }
 
     @Start

@@ -21,6 +21,11 @@ class UserServiceTest {
         UserService.initDatabase();
     }
 
+    @AfterEach
+    void tearDown() {
+        UserService.close();
+    }
+
     @Test
     @DisplayName("Database is initialized, and there are no users")
     void testDatabaseIsInitializedAndNoUserIsPersisted() {

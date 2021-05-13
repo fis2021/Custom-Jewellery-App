@@ -1,6 +1,7 @@
 package org.loose.fis.sre.services;
 
 import org.apache.commons.io.FileUtils;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -20,6 +21,11 @@ class MaterialServiceTest {
         FileSystemService.APPLICATION_FOLDER = ".test-jewellery-databases";
         FileUtils.cleanDirectory(FileSystemService.getApplicationHomeFolder().toFile());
         MaterialService.initDatabase();
+    }
+
+    @AfterEach
+    void tearDown() {
+        MaterialService.close();
     }
 
     @Test

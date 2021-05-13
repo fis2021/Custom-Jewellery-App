@@ -15,9 +15,10 @@ import static org.loose.fis.sre.services.FileSystemService.getPathToFile;
 public class MaterialService {
 
     private static ObjectRepository<Material> materialRepository;
+    private static Nitrite database;
 
     public static void initDatabase() {
-        Nitrite database = Nitrite.builder()
+        database = Nitrite.builder()
                 .filePath(getPathToFile("materials.db").toFile())
                 .openOrCreate("test", "test");
 
@@ -61,7 +62,10 @@ public class MaterialService {
             if(Objects.equals(name, material.getName()))
                 return material;
         return null;
+    }
 
-
+    public static void close() {
+        materialRepository.close();
+        database.close();
     }
 }
