@@ -5,19 +5,19 @@
 ## Table of contents
 
 
-###Application  description
+### Application  description
 * [General description](#general-description)
 * [Technologies used](#technologies-used)
 * [Signing up for an account and logging in](#signing-up-for-an-account-and-logging-in)
 * [The Admin Account](#the-manager-account)
 * [The Client Account](#the-client-account)
 
-###Setup & Run
+### Setup & Run
 
 * [Prerequisites](#prerequisites)
 * [Download & Run](#download--run)
 
-###Resources
+### Resources
 
 
 <img src="docs/login.png" alt="Login page" width="600">
@@ -60,14 +60,14 @@ After logging in, a client will be redirected to a home page. The following oper
 <img src="docs/mainClient.png" alt="Client home page" width="600">
 
 
-##Setup & Run
+## Setup & Run
 
-###Prerequisites
+### Prerequisites
 * **Java 11 or higher**. To check your Java version you can run `java -version` in the command line;
 * **Gradle**. To check if you have Gradle installed run `gradle -version` in the command line. If you need to install it, please refer to this [official Gradle docs](https://docs.gradle.org/current/userguide/installation.html); 
 * **JavaFX**. Make sure you install JavaFX SDK on your machine, using the instructions provided in the [Official Documentation](https://openjfx.io/openjfx-docs/#install-javafx);
 
-###Download & Run
+### Download & Run
 To set up and run the project locally on your machine, please follow the next steps:
 
 * **Clone the repository**. You can do this using `git clone https://github.com/fis2021/Custom-Jewellery-App.git`;
@@ -76,7 +76,7 @@ To set up and run the project locally on your machine, please follow the next st
 * **Run the project with Gradle**. To start the project use `gradle run` or `./gradlew run`
 
 
-##Resources
+## Resources
 
 To understand and learn more about **JavaFX**, you can take a look at some of the following links:
 * [Introduction to FXML](https://openjfx.io/javadoc/16/javafx.fxml/javafx/fxml/doc-files/introduction_to_fxml.html)
