@@ -16,7 +16,7 @@
    </padding>
    <children>
       <HBox alignment="CENTER" prefHeight="200.0" prefWidth="600.0" style="-fx-spacing: 250;">
-         <Button onAction="#handleViewProductsButtonAction" id="viewProductsButton" alignment="CENTER" mnemonicParsing="false" prefWidth="150.0" text="Lista produse">
+         <Button onAction="#handleViewProductsButtonAction" styleClass="bigButton" id="viewProductsButton" alignment="CENTER" mnemonicParsing="false" prefWidth="150.0" text="Lista produse">
             <font>
                <Font size="18.0" />
             </font>
@@ -31,7 +31,7 @@
          <padding>
             <Insets right="200"/>
          </padding>
-         <Button onAction="#handleViewOrdersButtonAction" id="viewOrdersButton" alignment="CENTER" mnemonicParsing="false" prefWidth="150.0" text="Comenzi">
+         <Button onAction="#handleViewOrdersButtonAction"  styleClass="bigButton" id="viewOrdersButton" alignment="CENTER" mnemonicParsing="false" prefWidth="150.0" text="Comenzi">
             <font>
                <Font size="18.0" />
             </font>
@@ -42,7 +42,7 @@
          <padding>
             <Insets left="150"/>
          </padding>
-         <Button fx:id="logOutButton" mnemonicParsing="false" id="logOutButton" onAction="#handleLodOutButtonAction" prefWidth="150.0" text="Log out">
+         <Button fx:id="logOutButton" styleClass="bigButton" mnemonicParsing="false" id="logOutButton" onAction="#handleLodOutButtonAction" prefWidth="150.0" text="Log out">
             <font>
                <Font size="18.0" />
             </font>
