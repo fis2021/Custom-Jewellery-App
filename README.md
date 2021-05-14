@@ -1,23 +1,31 @@
 
 # Custom Jewellery App
 
+
 ## Table of contents
-####Application  description
+
+
+###Application  description
 * [General description](#general-description)
 * [Technologies used](#technologies-used)
 * [Signing up for an account and logging in](#signing-up-for-an-account-and-logging-in)
 * [The Admin Account](#the-manager-account)
 * [The Client Account](#the-client-account)
-####Setup & Run
+
+###Setup & Run
+
 * [Prerequisites](#prerequisites)
 * [Download & Run](#download--run)
-####Resources
+
+###Resources
 
 
-<img src="docs/login.png" width="600">
+<img src="docs/login.png" alt="Login page" width="600">
 
 ## Application description
+
 ### General description
+
 Custom Jewellery App It is an application that aims to sell personalized jewelry. A customer can order personalized jewelry, with details necessary to make the product (jewelry type, material, engraved message) and they go directly to the jeweler.
 
 ### Technologies used
@@ -27,26 +35,29 @@ Custom Jewellery App It is an application that aims to sell personalized jewelry
 * Nitrite - database operations;
 
 ### Signing up for an account and logging in
+
 Before using the platform, every user, be they a jeweler or a client, must sign up for an account. On registration, there are two types of user accounts, based on the aforementioned roles:
 * Client
 * Manager (Jeweler)
 
 ### The Manager Account
+
 After logging in, the manager will be redirected to a home page. The following operations are available here:
 * **See and modify a list of products** from where the manager can **add**, **delete**, **modify** products. There are 2 types of products: **product type** and **material**;
 * **View orders**, from where the manager can **accept** or **decline** active orders;
 * **Log out**, the manager will be redirected to log in;
 
-<img src="docs/mainManager.png" width="600">
+<img src="docs/mainManager.png" alt="Manager home page" width="600">
 
 ### The Client Account
+
 After logging in, a client will be redirected to a home page. The following operations are available here:
 * **See a list of products**, where the client can see the price of all added products, both types and materials ;
 * **See a list of orders**, where the client can see his orders, and the stage they are in;
 * **Make a new order** where the client can select type, material and message for his custom jewellery;
 * **Log out**, the client will be redirected to log in;
 
-<img src="docs/mainClient.png" width="600">
+<img src="docs/mainClient.png" alt="Client home page" width="600">
 
 
 ##Setup & Run
