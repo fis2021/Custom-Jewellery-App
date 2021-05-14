@@ -34,9 +34,9 @@ public class UserService {
         return userRepository.find().toList();
     }
 
-    public static void addUser(String username, String password, String role) throws UsernameAlreadyExistsException {
+    public static void addUser(String lastName, String firstName, String address, String phone, String sex, String username, String password, String role) throws UsernameAlreadyExistsException {
         checkUserDoesNotAlreadyExist(username);
-        userRepository.insert(new User(username, encodePassword(username, password), role));
+        userRepository.insert(new User(lastName, firstName, address, phone, sex, username, encodePassword(username, password), role));
     }
 
     static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException {

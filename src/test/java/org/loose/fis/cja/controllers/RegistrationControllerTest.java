@@ -26,6 +26,8 @@ class RegistrationControllerTest {
     private static final String CORRECT_PASSWORD = "passwordCorrect";
     private static final String CLIENT_ROLE = "Client";
     private static final String MANAGER_ROLE = "Manager";
+    private static final String MALE_SEX = "Barbat";
+    private static final String TEST = "test";
 
     @BeforeEach
     void setUp() throws Exception {
@@ -48,6 +50,13 @@ class RegistrationControllerTest {
     }
 
     @Test
+    @DisplayName("Testing not all set options")
+    void testNotAllSetOptions(FxRobot robot) {
+        robot.clickOn("#register");
+        assertThat(robot.lookup("#registrationMessage").queryText()).hasText("Not all fields are set");
+    }
+
+    @Test
     @DisplayName("Creating an account for a client")
     void testRegistrationClient(FxRobot robot) {
         robot.clickOn("#username");
@@ -56,12 +65,27 @@ class RegistrationControllerTest {
         robot.write(CORRECT_PASSWORD);
         robot.clickOn("#role");
         robot.clickOn(CLIENT_ROLE);
+        robot.clickOn("#sex");
+        robot.clickOn(MALE_SEX);
+        robot.clickOn("#lastname");
+        robot.write(TEST);
+        robot.clickOn("#firstname");
+        robot.write(TEST);
+        robot.clickOn("#address");
+        robot.write(TEST);
+        robot.clickOn("#phone");
+        robot.write(TEST);
         robot.clickOn("#register");
 
         assertThat(UserService.getAllUsers().size()).isEqualTo(1);
         assertThat(UserService.getAllUsers().get(0).getUsername()).isEqualTo(CORRECT_USERNAME);
         assertThat(UserService.getAllUsers().get(0).getPassword()).isEqualTo(UserService.encodePassword(CORRECT_USERNAME, CORRECT_PASSWORD));
         assertThat(UserService.getAllUsers().get(0).getRole()).isEqualTo(CLIENT_ROLE);
+        assertThat(UserService.getAllUsers().get(0).getLastName()).isEqualTo(TEST);
+        assertThat(UserService.getAllUsers().get(0).getFirstName()).isEqualTo(TEST);
+        assertThat(UserService.getAllUsers().get(0).getAddress()).isEqualTo(TEST);
+        assertThat(UserService.getAllUsers().get(0).getPhone()).isEqualTo(TEST);
+        assertThat(UserService.getAllUsers().get(0).getSex()).isEqualTo(MALE_SEX);
         assertThat(robot.lookup("#registrationMessage").queryText()).hasText("Account created successfully!");
     }
 
@@ -74,11 +98,27 @@ class RegistrationControllerTest {
         robot.write(CORRECT_PASSWORD);
         robot.clickOn("#role");
         robot.clickOn(MANAGER_ROLE);
+        robot.clickOn("#sex");
+        robot.clickOn(MALE_SEX);
+        robot.clickOn("#lastname");
+        robot.write(TEST);
+        robot.clickOn("#firstname");
+        robot.write(TEST);
+        robot.clickOn("#address");
+        robot.write(TEST);
+        robot.clickOn("#phone");
+        robot.write(TEST);
         robot.clickOn("#register");
 
         assertThat(UserService.getAllUsers().size()).isEqualTo(1);
         assertThat(UserService.getAllUsers().get(0).getUsername()).isEqualTo(CORRECT_USERNAME);
         assertThat(UserService.getAllUsers().get(0).getPassword()).isEqualTo(UserService.encodePassword(CORRECT_USERNAME, CORRECT_PASSWORD));
+        assertThat(UserService.getAllUsers().get(0).getRole()).isEqualTo(MANAGER_ROLE);
+        assertThat(UserService.getAllUsers().get(0).getLastName()).isEqualTo(TEST);
+        assertThat(UserService.getAllUsers().get(0).getFirstName()).isEqualTo(TEST);
+        assertThat(UserService.getAllUsers().get(0).getAddress()).isEqualTo(TEST);
+        assertThat(UserService.getAllUsers().get(0).getPhone()).isEqualTo(TEST);
+        assertThat(UserService.getAllUsers().get(0).getSex()).isEqualTo(MALE_SEX);
         assertThat(robot.lookup("#registrationMessage").queryText()).hasText("Account created successfully!");
 
     }
@@ -92,6 +132,16 @@ class RegistrationControllerTest {
         robot.write(CORRECT_PASSWORD);
         robot.clickOn("#role");
         robot.clickOn(CLIENT_ROLE);
+        robot.clickOn("#sex");
+        robot.clickOn(MALE_SEX);
+        robot.clickOn("#lastname");
+        robot.write(TEST);
+        robot.clickOn("#firstname");
+        robot.write(TEST);
+        robot.clickOn("#address");
+        robot.write(TEST);
+        robot.clickOn("#phone");
+        robot.write(TEST);
         robot.clickOn("#register");
 
         robot.clickOn("#register");

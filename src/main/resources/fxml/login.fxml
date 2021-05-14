@@ -31,11 +31,11 @@
         </padding>
         <HBox>
             <Pane prefWidth="390"/>
-            <TextField promptText="Username" id="username" fx:id="usernameField"/>
+            <TextField styleClass="big_text_field" promptText="Username" id="username" fx:id="usernameField"/>
         </HBox>
         <HBox>
             <Pane prefWidth="390"/>
-            <PasswordField promptText="Password" id="password" fx:id="passwordField"/>
+            <PasswordField styleClass="big_text_field" promptText="Password" id="password" fx:id="passwordField"/>
         </HBox>
     </VBox>
 

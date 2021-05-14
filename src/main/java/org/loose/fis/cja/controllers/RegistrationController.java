@@ -23,17 +23,34 @@ public class RegistrationController {
     @FXML
     private TextField usernameField;
     @FXML
+    private TextField lastnameField;
+    @FXML
+    private TextField firstnameField;
+    @FXML
+    private TextField addressField;
+    @FXML
+    private TextField phoneField;
+    @FXML
     private ChoiceBox role;
+    @FXML
+    private ChoiceBox sex;
 
     @FXML
     public void initialize() {
         role.getItems().addAll("Client", "Manager");
+        sex.getItems().addAll("Barbat", "Femeie");
     }
 
     @FXML
     public void handleRegisterAction() {
+        if(lastnameField.getText().equals("") || firstnameField.getText().equals("") || addressField.getText().equals("") ||
+           phoneField.getText().equals("") || usernameField.getText().equals("") || passwordField.getText().equals("") ||
+           role.getValue() == null || sex.getValue() == null){
+            registrationMessage.setText("Not all fields are set");
+            return;
+        }
         try {
-            UserService.addUser(usernameField.getText(), passwordField.getText(), (String) role.getValue());
+            UserService.addUser(lastnameField.getText(), firstnameField.getText(), addressField.getText(), phoneField.getText(), (String) sex.getValue(), usernameField.getText(), passwordField.getText(), (String) role.getValue());
             registrationMessage.setText("Account created successfully!");
         } catch (UsernameAlreadyExistsException e) {
             registrationMessage.setText(e.getMessage());

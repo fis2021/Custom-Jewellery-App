@@ -1,3 +1,4 @@
+
 # Custom Jewellery App
 
 ## Table of contents
@@ -12,6 +13,8 @@
 * [Download & Run](#download--run)
 ####Resources
 
+
+<img src="docs/login.png" width="600">
 
 ## Application description
 ### General description
@@ -34,12 +37,16 @@ After logging in, the manager will be redirected to a home page. The following o
 * **View orders**, from where the manager can **accept** or **decline** active orders;
 * **Log out**, the manager will be redirected to log in;
 
+<img src="docs/mainManager.png" width="600">
+
 ### The Client Account
 After logging in, a client will be redirected to a home page. The following operations are available here:
 * **See a list of products**, where the client can see the price of all added products, both types and materials ;
 * **See a list of orders**, where the client can see his orders, and the stage they are in;
 * **Make a new order** where the client can select type, material and message for his custom jewellery;
 * **Log out**, the client will be redirected to log in;
+
+<img src="docs/mainClient.png" width="600">
 
 
 ##Setup & Run

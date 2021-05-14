@@ -10,8 +10,16 @@
 
 .text-field{
     -fx-background-radius: 40;
+}
+
+.big_text_field {
     -fx-pref-width: 350;
     -fx-font-size: 17;
+}
+
+.small_text_field {
+    -fx-pref-width: 350;
+    -fx-font-size: 12;
 }
 
 .title {
@@ -21,6 +29,8 @@
 
 .choice-box {
     -fx-background-radius: 20;
+    -fx-background-color: white;
+    -fx-font-size: 15;
 }
 
 .button {
@@ -41,11 +51,6 @@
     -fx-background-color: #bfbcbc;
 }
 
-.choice-box {
-    -fx-background-color: white;
-    -fx-font-size: 20;
-}
-
 .choice-box:hover {
     -fx-background-color: #e7e1e1;
 }
@@ -57,6 +62,11 @@
 }
 
 #roleText {
-    -fx-font-size: 25;
+    -fx-font-size: 15;
+    -fx-effect: dropshadow(one-pass-box, dimgrey, 10, 0.3, 2, 2);
+}
+
+#sexText {
+    -fx-font-size: 15;
     -fx-effect: dropshadow(one-pass-box, dimgrey, 10, 0.3, 2, 2);
 }

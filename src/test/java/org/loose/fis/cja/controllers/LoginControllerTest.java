@@ -28,6 +28,7 @@ class LoginControllerTest {
     private static final String INCORRECT_PASSWORD = "passwordIncorrect";
     private static final String CLIENT_ROLE = "Client";
     private static final String MANAGER_ROLE = "Manager";
+    private static final String TEST = "test";
 
     @BeforeEach
     void setUp() throws Exception {
@@ -65,7 +66,7 @@ class LoginControllerTest {
     @Test
     @DisplayName("Login failed. Incorrect password")
     void testLoginButtonClickIncorrectPassword(FxRobot robot) throws Exception{
-        UserService.addUser(CORRECT_USERNAME, CORRECT_PASSWORD, CLIENT_ROLE);
+        UserService.addUser(TEST, TEST, TEST, TEST, TEST, CORRECT_USERNAME, CORRECT_PASSWORD, CLIENT_ROLE);
 
         robot.clickOn("#username");
         robot.write(CORRECT_USERNAME);
@@ -79,7 +80,7 @@ class LoginControllerTest {
     @Test
     @DisplayName("Testing client successfully login")
     void testClientSuccessfullyLogin(FxRobot robot) throws Exception{
-        UserService.addUser(CORRECT_USERNAME, CORRECT_PASSWORD, CLIENT_ROLE);
+        UserService.addUser(TEST, TEST, TEST, TEST, TEST, CORRECT_USERNAME, CORRECT_PASSWORD, CLIENT_ROLE);
 
         robot.clickOn("#username");
         robot.write(CORRECT_USERNAME);
@@ -93,7 +94,7 @@ class LoginControllerTest {
     @Test
     @DisplayName("Testing manager successfully login")
     void testManagerSuccessfullyLogin(FxRobot robot) throws Exception{
-        UserService.addUser(CORRECT_USERNAME, CORRECT_PASSWORD, MANAGER_ROLE);
+        UserService.addUser(TEST, TEST, TEST, TEST, TEST, CORRECT_USERNAME, CORRECT_PASSWORD, MANAGER_ROLE);
 
         robot.clickOn("#username");
         robot.write(CORRECT_USERNAME);

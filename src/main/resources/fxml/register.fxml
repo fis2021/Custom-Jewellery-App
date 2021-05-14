@@ -8,36 +8,56 @@
 <?import java.net.URL?>
 <VBox styleClass="register" id="registerFile" prefWidth="800" prefHeight="600" alignment="center" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.cja.controllers.RegistrationController">
     <padding>
-        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+        <Insets bottom="5.0" left="25.0" right="25.0" top="5.0" />
     </padding>
     <Text styleClass="title" text="Registration">
         <font>
             <Font size="40.0" />
         </font></Text>
 
-    <VBox spacing="40">
+    <VBox spacing="10">
         <padding>
             <Insets top="50"/>
         </padding>
         <HBox alignment="CENTER">
-            <TextField promptText="Username" id="username" fx:id="usernameField"/>
+            <TextField styleClass="small_text_field" promptText="Nume" id="lastname" fx:id="lastnameField"/>
         </HBox>
         <HBox alignment="CENTER">
-            <PasswordField promptText="Password" id="password" fx:id="passwordField"/>
+            <TextField styleClass="small_text_field" promptText="Prenume" id="firstname" fx:id="firstnameField"/>
+        </HBox>
+        <HBox alignment="CENTER">
+            <TextField styleClass="small_text_field" promptText="Adresa" id="address" fx:id="addressField"/>
+        </HBox>
+        <HBox alignment="CENTER">
+            <TextField styleClass="small_text_field" promptText="Telefon" id="phone" fx:id="phoneField"/>
+        </HBox>
+        <HBox alignment="CENTER">
+            <TextField styleClass="small_text_field" promptText="Username" id="username" fx:id="usernameField"/>
+        </HBox>
+        <HBox alignment="CENTER">
+            <PasswordField styleClass="small_text_field" promptText="Password" id="password" fx:id="passwordField"/>
         </HBox>
     </VBox>
 
     <HBox alignment="CENTER" spacing="70">
         <padding>
-            <Insets top="40"/>
+            <Insets top="10"/>
         </padding>
         <Text fx:id="roleText" text="Role:"/>
         <ChoiceBox fx:id="role" id="role" prefWidth="150.0"/>
     </HBox>
 
+    <HBox alignment="CENTER" spacing="70">
+        <padding>
+            <Insets top="10"/>
+        </padding>
+        <Text fx:id="sexText" text="Sex: "/>
+        <ChoiceBox fx:id="sex" id="sex" prefWidth="150.0"/>
+    </HBox>
+
     <HBox alignment="CENTER" spacing="130">
         <padding>
-            <Insets top="50"/>
+            <Insets top="20"/>
         </padding>
         <Button onAction="#handleBackAction" id="backToLogin" text="Go back" />
         <Button onAction="#handleRegisterAction" id="register" text="Register" />
