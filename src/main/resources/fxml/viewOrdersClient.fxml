@@ -7,8 +7,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox prefHeight="600.0" id="ordersClientFile" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.ViewOrdersClientController">
-    <Button onAction="#handleBackButtonAction" id="backButton" mnemonicParsing="false" text="Inapoi">
+<?import java.net.URL?>
+<VBox styleClass="background" prefHeight="600.0" id="ordersClientFile" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.ViewOrdersClientController">
+    <Button styleClass="small" onAction="#handleBackButtonAction" id="backButton" mnemonicParsing="false" text="Inapoi">
         <VBox.margin>
             <Insets top="20.0" left="20.0"/>
         </VBox.margin>
@@ -30,11 +31,14 @@
             <Insets bottom="50.0" left="50.0" right="50.0" top="20.0" />
         </padding>
         <top>
-            <Label alignment="CENTER" prefHeight="5.0" prefWidth="260.0" text="Comenzi" BorderPane.alignment="CENTER">
+            <Label alignment="CENTER" styleClass="title, big_font" prefHeight="5.0" prefWidth="260.0" text="Comenzi" BorderPane.alignment="CENTER">
                 <font>
                     <Font size="20.0" />
                 </font>
             </Label>
         </top>
     </BorderPane>
+    <stylesheets>
+        <URL value="@../css/userStyle.css" />
+    </stylesheets>
 </VBox>

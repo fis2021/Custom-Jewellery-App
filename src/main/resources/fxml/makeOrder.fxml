@@ -5,7 +5,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane alignment="center" id="makeOrderFile" hgap="15" prefHeight="600" prefWidth="800" vgap="15" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.MakeOrderController">
+<?import java.net.URL?>
+<GridPane alignment="center" styleClass="background" id="makeOrderFile" hgap="15" prefHeight="600" prefWidth="800" vgap="15" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.MakeOrderController">
     <padding>
         <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
     </padding>
@@ -39,6 +40,9 @@
         </font></Button>
 
     <Text fx:id="orderMessage" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+    <stylesheets>
+        <URL value="@../css/userStyle.css" />
+    </stylesheets>
     <columnConstraints>
         <ColumnConstraints />
         <ColumnConstraints />

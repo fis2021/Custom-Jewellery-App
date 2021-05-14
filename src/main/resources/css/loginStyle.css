@@ -19,14 +19,18 @@
     -fx-effect: dropshadow(one-pass-box, dimgrey, 10, 0.3, 2, 2);
 }
 
+.choice-box {
+    -fx-background-radius: 20px;
+}
+
 .button {
     -fx-background-radius: 40px;
     -fx-padding: 10;
     -fx-font-size: 24;
     -fx-background-color:
-            linear-gradient(#f1ecec, #e3dddd),
-            linear-gradient(#bfbdbd 50%, #d0c9c9 20%, #a49d9d 100%),
-            linear-gradient(#d0cccc 0%, #f6f6f6 50%);
+            linear-gradient(#f1ecec93, #e3dddd93),
+            linear-gradient(#bfbdbd93 50%, #d0c9c993 20%, #a49d9d93 100%),
+            linear-gradient(#d0cccc93 0%, #f6f6f693 50%);
 }
 
 .button:hover {
