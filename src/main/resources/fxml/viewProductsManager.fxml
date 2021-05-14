@@ -11,8 +11,12 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox id="viewProductsManagerFile" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.ViewProductsManagerController">
-   <Button onAction="#handleBackButtonAction" id="backButton" mnemonicParsing="false" text="Inapoi">
+<?import java.net.URL?>
+<VBox id="viewProductsManagerFile" styleClass="background" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.ViewProductsManagerController">
+  <padding>
+      <Insets bottom="20"/>
+  </padding>
+   <Button onAction="#handleBackButtonAction" styleClass="smallButton" id="backButton" mnemonicParsing="false" text="Inapoi">
       <VBox.margin>
          <Insets left="15.0" top="15.0" />
       </VBox.margin>
@@ -29,10 +33,10 @@
                     </TableView>
                 </center>
                 <padding>
-                    <Insets bottom="50.0" left="50.0" right="20.0" top="30.0" />
+                    <Insets bottom="30.0" left="50.0" right="20.0" top="30.0" />
                 </padding>
                 <top>
-                    <Label alignment="CENTER" prefHeight="5.0" prefWidth="260.0" text="Tipuri produse" BorderPane.alignment="CENTER">
+                    <Label alignment="CENTER" prefHeight="5.0" prefWidth="260.0" styleClass="title,medium_font" text="Tipuri produse" BorderPane.alignment="CENTER">
                         <font>
                             <Font size="20.0" />
                         </font>
@@ -49,10 +53,10 @@
                     </TableView>
                 </center>
                 <padding>
-                    <Insets bottom="50.0" left="20.0" right="50.0" top="30.0" />
+                    <Insets bottom="30.0" left="20.0" right="50.0" top="30.0" />
                 </padding>
                 <top>
-                    <Label alignment="CENTER" prefHeight="5.0" prefWidth="260.0" text="Materiale" BorderPane.alignment="CENTER">
+                    <Label alignment="CENTER" prefHeight="5.0" styleClass="title,medium_font" prefWidth="260.0" text="Materiale" BorderPane.alignment="CENTER">
                         <font>
                             <Font size="20.0" />
                         </font></Label>
@@ -61,25 +65,31 @@
         </children>
     </AnchorPane>
     <HBox alignment="TOP_CENTER" prefHeight="120.0" prefWidth="800.0" style="-fx-spacing: 50;">
-        <Button id="addButton" mnemonicParsing="false" onAction="#handleAddButtonAction" prefWidth="150.0" text="Adaugare">
+        <Button id="addButton" mnemonicParsing="false" styleClass="smallButton" onAction="#handleAddButtonAction" prefWidth="150.0" text="Adaugare">
             <font>
                 <Font size="12.0" />
             </font>
         </Button>
-        <Button id="deleteTypeButton" mnemonicParsing="false" onAction="#handleDeleteTypeButtonAction" prefWidth="150.0" text="Eliminare tip">
+        <Button id="deleteTypeButton" mnemonicParsing="false" styleClass="smallButton" onAction="#handleDeleteTypeButtonAction" prefWidth="150.0" text="Eliminare tip">
             <font>
                 <Font size="12.0" />
             </font>
         </Button>
-        <Button id="deleteMaterialButton" layoutX="335.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleDeleteMaterialButtonAction" prefWidth="150.0" text="Eliminare material">
+        <Button id="deleteMaterialButton" styleClass="smallButton" layoutX="335.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleDeleteMaterialButtonAction" prefWidth="150.0" text="Eliminare material">
             <font>
                 <Font size="12.0" />
             </font>
         </Button>
-        <Button id="modifyButton" mnemonicParsing="false" onAction="#handleModifyPriceButtonAction" prefWidth="150.0" text="Modificare pret">
+        <Button id="modifyButton" styleClass="smallButton" mnemonicParsing="false" onAction="#handleModifyPriceButtonAction" prefWidth="150.0" text="Modificare pret">
             <font>
                 <Font size="12.0" />
             </font>
         </Button>
+
+
     </HBox>
+
+    <stylesheets>
+        <URL value="@../css/managerStyle.css" />
+    </stylesheets>
 </VBox>

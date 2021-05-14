@@ -39,7 +39,6 @@
         <font>
             <Font size="15.0" />
         </font></Button>
-
     <Text fx:id="orderMessage" GridPane.columnIndex="1" GridPane.rowIndex="8" />
     <stylesheets>
         <URL value="@../css/userStyle.css" />

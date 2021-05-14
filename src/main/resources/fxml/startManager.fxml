@@ -8,39 +8,48 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="600.0" id="startManagerFile" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.StartManagerController">
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<VBox styleClass="homepage" id="startManagerFile" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.StartManagerController">
+   <padding>
+      <Insets top="30" left="50"/>
+   </padding>
    <children>
-      <BorderPane prefHeight="250.0" prefWidth="600.0">
-         <center>
-            <ImageView fitHeight="150.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-               <image>
-                  <Image url="@../images/Rigs.png" />
-               </image>
-            </ImageView>
-         </center>
-      </BorderPane>
-      <HBox alignment="CENTER" prefHeight="150.0" prefWidth="600.0" style="-fx-spacing: 150;">
-         <children>
-            <Button onAction="#handleViewProductsButtonAction" id="viewProductsButton" alignment="CENTER" mnemonicParsing="false" prefWidth="150.0" text="Lista produse">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
-            <Button onAction="#handleViewOrdersButtonAction" id="viewOrdersButton" alignment="CENTER" mnemonicParsing="false" prefWidth="150.0" text="Comenzi">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
-         </children>
+      <HBox alignment="CENTER" prefHeight="200.0" prefWidth="600.0" style="-fx-spacing: 250;">
+         <Button onAction="#handleViewProductsButtonAction" styleClass="bigButton" id="viewProductsButton" alignment="CENTER" mnemonicParsing="false" prefWidth="150.0" text="Lista produse">
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Button>
+         <ImageView fitHeight="170.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+            <image>
+               <Image url="@../images/managerHomePic.png" />
+            </image>
+         </ImageView>
       </HBox>
-      <HBox alignment="CENTER" prefHeight="160.0" prefWidth="200.0">
-         <children>
-            <Button fx:id="logOutButton" id="logOutButton" mnemonicParsing="false" onAction="#handleLodOutButtonAction" prefWidth="150.0" text="Log out">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
-         </children>
+      <HBox alignment="CENTER" prefHeight="200.0" prefWidth="200.0" spacing="300">
+         <padding>
+            <Insets right="200"/>
+         </padding>
+         <Button onAction="#handleViewOrdersButtonAction"  styleClass="bigButton" id="viewOrdersButton" alignment="CENTER" mnemonicParsing="false" prefWidth="150.0" text="Comenzi">
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Button>
+
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
+         <padding>
+            <Insets left="150"/>
+         </padding>
+         <Button fx:id="logOutButton" styleClass="bigButton" mnemonicParsing="false" id="logOutButton" onAction="#handleLodOutButtonAction" prefWidth="150.0" text="Log out">
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Button>
       </HBox>
    </children>
+   <stylesheets>
+      <URL value="@../css/managerStyle.css" />
+   </stylesheets>
 </VBox>

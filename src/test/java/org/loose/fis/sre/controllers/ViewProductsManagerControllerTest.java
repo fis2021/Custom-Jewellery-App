@@ -44,6 +44,7 @@ class ViewProductsManagerControllerTest {
     void tearDown() {
         MaterialService.close();
         ProductTypeService.close();
+        OrderService.close();
     }
 
     @Start
@@ -52,6 +53,7 @@ class ViewProductsManagerControllerTest {
         FileUtils.cleanDirectory(FileSystemService.getApplicationHomeFolder().toFile());
         ProductTypeService.initDatabase();
         MaterialService.initDatabase();
+        OrderService.initDatabase();
         ProductTypeService.addType(TYPE, PRICE);
         MaterialService.addMaterial(MATERIAL, PRICE);
 
