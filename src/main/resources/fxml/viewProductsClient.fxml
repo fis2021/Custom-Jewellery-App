@@ -5,27 +5,28 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox prefHeight="600.0" id="viewProductsClientFile" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.ViewProductsClientController">
-    <Button onAction="#handleBackButtonAction" id="backButton" mnemonicParsing="false" text="Inapoi">
+<?import java.net.URL?>
+<VBox prefHeight="600.0" styleClass="background" id="viewProductsClientFile" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.ViewProductsClientController">
+    <Button styleClass="small_button" onAction="#handleBackButtonAction" id="backButton" mnemonicParsing="false" text="Inapoi">
         <VBox.margin>
             <Insets left="15.0" top="15.0" />
         </VBox.margin>
     </Button>
     <AnchorPane>
-        <BorderPane prefHeight="600.0" prefWidth="400.0">
+        <BorderPane prefHeight="550.0" prefWidth="400.0">
             <center>
-                <TableView fx:id="typeTable" prefHeight="600.0" prefWidth="330.0" BorderPane.alignment="BOTTOM_LEFT">
+                <TableView fx:id="typeTable" prefHeight="400.0" prefWidth="330.0" BorderPane.alignment="BOTTOM_LEFT">
                     <columns>
-                        <TableColumn fx:id="productTypeColumn" prefWidth="165.0" text="Tip" />
-                        <TableColumn fx:id="productPriceColumn" prefWidth="165.0" text="Pret" />
+                        <TableColumn fx:id="productTypeColumn" prefWidth="164.0" text="Tip" />
+                        <TableColumn fx:id="productPriceColumn" prefWidth="164.0" text="Pret" />
                     </columns>
                 </TableView>
             </center>
             <padding>
-                <Insets bottom="50.0" left="50.0" right="20.0" top="50.0" />
+                <Insets bottom="50.0" left="50.0" right="20.0" top="30.0" />
             </padding>
          <top>
-            <Label alignment="CENTER" prefHeight="5.0" prefWidth="260.0" text="Tipuri produse" BorderPane.alignment="CENTER">
+            <Label styleClass="title, medium_font" alignment="CENTER" prefHeight="5.0" prefWidth="260.0" text="Tipuri produse" BorderPane.alignment="CENTER">
                <font>
                   <Font size="20.0" />
                </font>
@@ -33,24 +34,27 @@
          </top>
 
         </BorderPane>
-        <BorderPane layoutX="400.0" prefHeight="600.0" prefWidth="400.0">
+        <BorderPane layoutX="400.0" prefHeight="550.0" prefWidth="400.0">
             <center>
-                <TableView fx:id="materialTable" prefHeight="600.0" prefWidth="330.0" BorderPane.alignment="BOTTOM_LEFT">
+                <TableView fx:id="materialTable" prefHeight="200.0" prefWidth="330.0" BorderPane.alignment="BOTTOM_LEFT">
                     <columns>
-                        <TableColumn fx:id="materialNameColumn" prefWidth="165.0" text="Nume" />
-                        <TableColumn fx:id="materialPriceColumn" prefWidth="165.0" text="Pret" />
+                        <TableColumn fx:id="materialNameColumn" prefWidth="164.0" text="Nume" />
+                        <TableColumn fx:id="materialPriceColumn" prefWidth="164.0" text="Pret" />
                     </columns>
                 </TableView>
             </center>
             <padding>
-                <Insets bottom="50.0" left="20.0" right="50.0" top="50.0" />
+                <Insets bottom="50.0" left="20.0" right="50.0" top="30.0" />
             </padding>
          <top>
-            <Label alignment="CENTER" prefHeight="5.0" prefWidth="260.0" text="Materiale" BorderPane.alignment="CENTER">
+            <Label styleClass="title, medium_font" alignment="CENTER" prefHeight="5.0" prefWidth="260.0" text="Materiale" BorderPane.alignment="CENTER">
                <font>
                   <Font size="20.0" />
                </font></Label>
          </top>
         </BorderPane>
     </AnchorPane>
+    <stylesheets>
+        <URL value="@../css/userStyle.css" />
+    </stylesheets>
 </VBox>

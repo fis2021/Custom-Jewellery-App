@@ -1,43 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox prefHeight="600.0" id="startUserFile" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.StartUserController">
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<VBox styleClass="homepage" id="startUserFile" prefWidth="800" prefHeight="600" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.StartUserController">
+   <padding>
+      <Insets top="110"/>
+   </padding>
    <children>
-      <BorderPane prefHeight="250.0" prefWidth="600.0">
-         <center>
-            <ImageView fitHeight="150.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-               <image>
-                  <Image url="@../images/Rigs.png" />
-               </image>
-            </ImageView>
-         </center>
-      </BorderPane>
-      <HBox alignment="CENTER" prefHeight="150.0" prefWidth="600.0" style="-fx-spacing: 150;">
+      <HBox alignment="CENTER" prefHeight="200.0" prefWidth="600.0" style="-fx-spacing: 150;">
          <children>
-            <Button alignment="CENTER" mnemonicParsing="false" fx:id="logOutButton" onAction="#handleLodOutButtonAction" prefWidth="150.0" text="Log out">
+            <Button id="listProductsButton" styleClass="big_button" alignment="CENTER" mnemonicParsing="false" onAction="#handleViewProductsButtonAction" prefWidth="150.0" text="Lista produse">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" id="orderButton" mnemonicParsing="false" onAction="#handleMakeOrderButtonAction" prefWidth="150.0" text="Comanda">
+            <Button id="listOrdersButton" styleClass="big_button" alignment="CENTER" mnemonicParsing="false" onAction="#handleViewOrdersButtonAction" prefWidth="150.0" text="Lista comenzi">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
          </children>
       </HBox>
-      <HBox alignment="CENTER" prefHeight="150.0" prefWidth="600.0" style="-fx-spacing: 150;">
+      <HBox alignment="CENTER" prefHeight="200.0" prefWidth="600.0" style="-fx-spacing: 150;">
          <children>
-            <Button alignment="CENTER" id="listProductsButton" mnemonicParsing="false" onAction="#handleViewProductsButtonAction" prefWidth="150.0" text="Lista produse">
+            <Button id="logOutButton" styleClass="big_button" alignment="CENTER" mnemonicParsing="false" fx:id="logOutButton" onAction="#handleLodOutButtonAction" prefWidth="150.0" text="Log out">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" id="listOrdersButton" mnemonicParsing="false" onAction="#handleViewOrdersButtonAction" prefWidth="150.0" text="Lista comenzi">
+            <Button id="orderButton" styleClass="big_button" alignment="CENTER" mnemonicParsing="false" onAction="#handleMakeOrderButtonAction" prefWidth="150.0" text="Comanda">
                <font>
                   <Font size="18.0" />
                </font>
@@ -46,4 +41,7 @@
       </HBox>
 
    </children>
+   <stylesheets>
+      <URL value="@../css/userStyle.css" />
+   </stylesheets>
 </VBox>
