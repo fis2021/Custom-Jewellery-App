@@ -6,7 +6,7 @@
 
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
-<VBox styleClass="homepage" id="startUserFile" prefWidth="800" prefHeight="600" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.StartUserController">
+<VBox styleClass="homepage" id="startUserFile" prefWidth="800" prefHeight="600" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.cja.controllers.StartUserController">
    <padding>
       <Insets top="110"/>
    </padding>
