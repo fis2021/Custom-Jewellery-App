@@ -5,15 +5,20 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox id="viewOrdersFile" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.ViewOrdersManagerController">
+<?import java.net.URL?>
+<VBox styleClass="background" id="viewOrdersFile" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.ViewOrdersManagerController">
    <HBox alignment="BOTTOM_LEFT" prefHeight="60.0" prefWidth="200.0" style="-fx-spacing: 300;">
-      <Button fx:id="backButton" id="backButton" mnemonicParsing="false" onAction="#handleBackButtonAction" text="Inapoi">
+      <Button fx:id="backButton" id="backButton" mnemonicParsing="false" styleClass="smallButton" onAction="#handleBackButtonAction" text="Inapoi">
          <HBox.margin>
-            <Insets left="15.0"/>
+            <Insets left="15.0" top="15"/>
          </HBox.margin>
       </Button>
       <Text fx:id="orderAcceptMessage" id="orderAcceptMessage"/>
    </HBox>
+
+   <stylesheets>
+      <URL value="@../css/managerStyle.css" />
+   </stylesheets>
 
    <BorderPane prefHeight="500.0" prefWidth="800.0">
       <center>
@@ -32,7 +37,7 @@
          <Insets left="50.0" right="50.0" top="20.0" />
       </padding>
       <top>
-         <Label alignment="CENTER" prefHeight="5.0" prefWidth="260.0" text="Comenzi" BorderPane.alignment="CENTER">
+         <Label alignment="CENTER" prefHeight="5.0" prefWidth="260.0" styleClass="title,bigFont" text="Comenzi" BorderPane.alignment="CENTER">
             <font>
                <Font size="20.0" />
             </font>
@@ -40,11 +45,11 @@
       </top>
    </BorderPane>
    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 200;">
-      <Button onAction="#handleAcceptButtonAction" id="acceptButton" mnemonicParsing="false" text="Accepta">
+      <Button onAction="#handleAcceptButtonAction" styleClass="smallButton" id="acceptButton" mnemonicParsing="false" text="Accepta">
          <font>
             <Font size="20.0" />
          </font></Button>
-      <Button onAction="#handleRejectButtonAction" id="rejectButton" mnemonicParsing="false" text="Refuza">
+      <Button onAction="#handleRejectButtonAction" id="rejectButton" styleClass="smallButton" mnemonicParsing="false" text="Refuza">
          <font>
             <Font size="20.0" />
          </font></Button>
