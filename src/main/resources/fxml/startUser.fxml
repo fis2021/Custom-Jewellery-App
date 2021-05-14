@@ -13,12 +13,12 @@
    <children>
       <HBox alignment="CENTER" prefHeight="200.0" prefWidth="600.0" style="-fx-spacing: 150;">
          <children>
-            <Button id="listProductsButton" styleClass="big" alignment="CENTER" mnemonicParsing="false" onAction="#handleViewProductsButtonAction" prefWidth="150.0" text="Lista produse">
+            <Button id="listProductsButton" styleClass="big_button" alignment="CENTER" mnemonicParsing="false" onAction="#handleViewProductsButtonAction" prefWidth="150.0" text="Lista produse">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button id="listOrdersButton" styleClass="big" alignment="CENTER" mnemonicParsing="false" onAction="#handleViewOrdersButtonAction" prefWidth="150.0" text="Lista comenzi">
+            <Button id="listOrdersButton" styleClass="big_button" alignment="CENTER" mnemonicParsing="false" onAction="#handleViewOrdersButtonAction" prefWidth="150.0" text="Lista comenzi">
                <font>
                   <Font size="18.0" />
                </font>
@@ -27,12 +27,12 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="200.0" prefWidth="600.0" style="-fx-spacing: 150;">
          <children>
-            <Button id="logOutButton" styleClass="big" alignment="CENTER" mnemonicParsing="false" fx:id="logOutButton" onAction="#handleLodOutButtonAction" prefWidth="150.0" text="Log out">
+            <Button id="logOutButton" styleClass="big_button" alignment="CENTER" mnemonicParsing="false" fx:id="logOutButton" onAction="#handleLodOutButtonAction" prefWidth="150.0" text="Log out">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button id="orderButton" styleClass="big" alignment="CENTER" mnemonicParsing="false" onAction="#handleMakeOrderButtonAction" prefWidth="150.0" text="Comanda">
+            <Button id="orderButton" styleClass="big_button" alignment="CENTER" mnemonicParsing="false" onAction="#handleMakeOrderButtonAction" prefWidth="150.0" text="Comanda">
                <font>
                   <Font size="18.0" />
                </font>

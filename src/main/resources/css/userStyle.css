@@ -20,20 +20,24 @@
     -fx-font-size: 45;
 }
 
-.big {
-    -fx-pref-height: 110px;
-    -fx-pref-width: 230px;
+.big_button {
+    -fx-pref-height: 110;
+    -fx-pref-width: 230;
     -fx-font-size: 24;
 }
 
-.small {
-    -fx-pref-height: 70px;
-    -fx-pref-width: 120px;
+.medium_button {
+    -fx-font-size: 20;
+}
+
+.small_button {
+    -fx-pref-height: 70;
+    -fx-pref-width: 120;
     -fx-font-size: 15;
 }
 
 .button {
-    -fx-background-radius: 40px;
+    -fx-background-radius: 40;
     -fx-padding: 10;
     -fx-background-color:
             linear-gradient(#f1ecec93, #e3dddd93),
@@ -49,6 +53,22 @@
     -fx-background-color: #bfbcbc;
 }
 
+.choice-box {
+    -fx-background-radius: 20;
+    -fx-pref-height: 30;
+    -fx-font-size: 18;
+    -fx-background-color: white;
+}
+
+.medium_label {
+    -fx-font-size: 20;
+}
+
+.text-field {
+    -fx-font-size: 18;
+    -fx-background-radius: 20;
+}
+
 .table-view {
     -fx-background-color: rgba(47, 47, 47, 0.64);
 }
@@ -60,7 +80,7 @@
 .table-view .column-header-background .label{
     -fx-background-color: #2f2f2fa3;
     -fx-text-fill: white;
-    -fx-font-weight: 800px;
+    -fx-font-weight: 800;
 }
 
 .table-view .column-header {
@@ -80,5 +100,3 @@
 .table-row-cell:selected {
     -fx-background-color: #a49d9d;
 }
-
-.ta

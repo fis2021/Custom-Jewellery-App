@@ -7,7 +7,7 @@
 
 <?import java.net.URL?>
 <VBox prefHeight="600.0" styleClass="background" id="viewProductsClientFile" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.ViewProductsClientController">
-    <Button styleClass="small" onAction="#handleBackButtonAction" id="backButton" mnemonicParsing="false" text="Inapoi">
+    <Button styleClass="small_button" onAction="#handleBackButtonAction" id="backButton" mnemonicParsing="false" text="Inapoi">
         <VBox.margin>
             <Insets left="15.0" top="15.0" />
         </VBox.margin>
