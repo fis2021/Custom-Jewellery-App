@@ -16,9 +16,9 @@ repositories {
     mavenCentral()
 }
 
-group = 'org.loose.fis'
+group = 'org.loose.cja'
 version = '0.1.0-SNAPSHOT'
-description = 'A simple registration example using Java 15+, JavaFX, Maven / Gradle and saving users in Nitrite Java (with encoded passwords).'
+description = 'An application for marketing of personalized jewelry using Java 15+, JavaFX, Gradle through which customers can order the desired jewelry directly from the jeweler.'
 
 sourceCompatibility = 11
 targetCompatibility = 11
@@ -38,7 +38,7 @@ dependencies {
     testCompile group: 'commons-io', name: 'commons-io', version: '2.8.0'
 }
 
-mainClassName = 'org.loose.fis.sre.Main'
+mainClassName = 'org.loose.fis.cja.Main'
 
 test {
     finalizedBy jacocoTestReport // report is always generated after tests run

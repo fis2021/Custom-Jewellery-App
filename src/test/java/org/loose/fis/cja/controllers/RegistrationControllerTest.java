@@ -1,0 +1,157 @@
+package org.loose.fis.cja.controllers;
+
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import org.apache.commons.io.FileUtils;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.loose.fis.cja.services.FileSystemService;
+import org.loose.fis.cja.services.UserService;
+import org.testfx.api.FxRobot;
+import org.testfx.framework.junit5.ApplicationExtension;
+import org.testfx.framework.junit5.Start;
+
+import static org.testfx.assertions.api.Assertions.assertThat;
+
+
+@ExtendWith(ApplicationExtension.class)
+class RegistrationControllerTest {
+
+    private static final String CORRECT_USERNAME = "usernameCorrect";
+    private static final String CORRECT_PASSWORD = "passwordCorrect";
+    private static final String CLIENT_ROLE = "Client";
+    private static final String MANAGER_ROLE = "Manager";
+    private static final String MALE_SEX = "Barbat";
+    private static final String TEST = "test";
+
+    @BeforeEach
+    void setUp() throws Exception {
+        FileSystemService.APPLICATION_FOLDER = ".test-jewellery-databases";
+        FileUtils.cleanDirectory(FileSystemService.getApplicationHomeFolder().toFile());
+        UserService.initDatabase();
+    }
+
+    @AfterEach
+    void tearDown() {
+        UserService.close();
+    }
+
+    @Start
+    void start(Stage primaryStage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/register.fxml"));
+        primaryStage.setScene(new Scene(root, 800, 600));
+        primaryStage.setTitle("Register-test");
+        primaryStage.show();
+    }
+
+    @Test
+    @DisplayName("Testing not all set options")
+    void testNotAllSetOptions(FxRobot robot) {
+        robot.clickOn("#register");
+        assertThat(robot.lookup("#registrationMessage").queryText()).hasText("Not all fields are set");
+    }
+
+    @Test
+    @DisplayName("Creating an account for a client")
+    void testRegistrationClient(FxRobot robot) {
+        robot.clickOn("#username");
+        robot.write(CORRECT_USERNAME);
+        robot.clickOn("#password");
+        robot.write(CORRECT_PASSWORD);
+        robot.clickOn("#role");
+        robot.clickOn(CLIENT_ROLE);
+        robot.clickOn("#sex");
+        robot.clickOn(MALE_SEX);
+        robot.clickOn("#lastname");
+        robot.write(TEST);
+        robot.clickOn("#firstname");
+        robot.write(TEST);
+        robot.clickOn("#address");
+        robot.write(TEST);
+        robot.clickOn("#phone");
+        robot.write(TEST);
+        robot.clickOn("#register");
+
+        assertThat(UserService.getAllUsers().size()).isEqualTo(1);
+        assertThat(UserService.getAllUsers().get(0).getUsername()).isEqualTo(CORRECT_USERNAME);
+        assertThat(UserService.getAllUsers().get(0).getPassword()).isEqualTo(UserService.encodePassword(CORRECT_USERNAME, CORRECT_PASSWORD));
+        assertThat(UserService.getAllUsers().get(0).getRole()).isEqualTo(CLIENT_ROLE);
+        assertThat(UserService.getAllUsers().get(0).getLastName()).isEqualTo(TEST);
+        assertThat(UserService.getAllUsers().get(0).getFirstName()).isEqualTo(TEST);
+        assertThat(UserService.getAllUsers().get(0).getAddress()).isEqualTo(TEST);
+        assertThat(UserService.getAllUsers().get(0).getPhone()).isEqualTo(TEST);
+        assertThat(UserService.getAllUsers().get(0).getSex()).isEqualTo(MALE_SEX);
+        assertThat(robot.lookup("#registrationMessage").queryText()).hasText("Account created successfully!");
+    }
+
+    @Test
+    @DisplayName("Creating an account for a client")
+    void testRegistrationManager(FxRobot robot) {
+        robot.clickOn("#username");
+        robot.write(CORRECT_USERNAME);
+        robot.clickOn("#password");
+        robot.write(CORRECT_PASSWORD);
+        robot.clickOn("#role");
+        robot.clickOn(MANAGER_ROLE);
+        robot.clickOn("#sex");
+        robot.clickOn(MALE_SEX);
+        robot.clickOn("#lastname");
+        robot.write(TEST);
+        robot.clickOn("#firstname");
+        robot.write(TEST);
+        robot.clickOn("#address");
+        robot.write(TEST);
+        robot.clickOn("#phone");
+        robot.write(TEST);
+        robot.clickOn("#register");
+
+        assertThat(UserService.getAllUsers().size()).isEqualTo(1);
+        assertThat(UserService.getAllUsers().get(0).getUsername()).isEqualTo(CORRECT_USERNAME);
+        assertThat(UserService.getAllUsers().get(0).getPassword()).isEqualTo(UserService.encodePassword(CORRECT_USERNAME, CORRECT_PASSWORD));
+        assertThat(UserService.getAllUsers().get(0).getRole()).isEqualTo(MANAGER_ROLE);
+        assertThat(UserService.getAllUsers().get(0).getLastName()).isEqualTo(TEST);
+        assertThat(UserService.getAllUsers().get(0).getFirstName()).isEqualTo(TEST);
+        assertThat(UserService.getAllUsers().get(0).getAddress()).isEqualTo(TEST);
+        assertThat(UserService.getAllUsers().get(0).getPhone()).isEqualTo(TEST);
+        assertThat(UserService.getAllUsers().get(0).getSex()).isEqualTo(MALE_SEX);
+        assertThat(robot.lookup("#registrationMessage").queryText()).hasText("Account created successfully!");
+
+    }
+
+    @Test
+    @DisplayName("Registration failed. Account already exists")
+    void testRegistrationAccountAlreadyExists(FxRobot robot) {
+        robot.clickOn("#username");
+        robot.write(CORRECT_USERNAME);
+        robot.clickOn("#password");
+        robot.write(CORRECT_PASSWORD);
+        robot.clickOn("#role");
+        robot.clickOn(CLIENT_ROLE);
+        robot.clickOn("#sex");
+        robot.clickOn(MALE_SEX);
+        robot.clickOn("#lastname");
+        robot.write(TEST);
+        robot.clickOn("#firstname");
+        robot.write(TEST);
+        robot.clickOn("#address");
+        robot.write(TEST);
+        robot.clickOn("#phone");
+        robot.write(TEST);
+        robot.clickOn("#register");
+
+        robot.clickOn("#register");
+        assertThat(robot.lookup("#registrationMessage").queryText()).hasText(String.format("An account with the username %s already exists!", CORRECT_USERNAME));
+    }
+
+    @Test
+    @DisplayName("Testing 'Back to login button' from registration")
+    void testBackToLoginButtonFromRegistration(FxRobot robot) {
+        robot.clickOn("#backToLogin");
+        robot.clickOn("#loginFile");
+    }
+}

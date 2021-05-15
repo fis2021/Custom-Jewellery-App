@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 
 <?import java.net.URL?>
-<VBox id="viewProductsManagerFile" styleClass="background" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.ViewProductsManagerController">
+<VBox id="viewProductsManagerFile" styleClass="background" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.cja.controllers.ViewProductsManagerController">
   <padding>
       <Insets bottom="20"/>
   </padding>

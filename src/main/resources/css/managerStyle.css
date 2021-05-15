@@ -1,5 +1,5 @@
 .homepage {
-    -fx-background-image: url('../images/home.jpeg');
+    -fx-background-image: url('../images/home.jpg');
     -fx-background-size: 800 600;
 }
 .smallButton{

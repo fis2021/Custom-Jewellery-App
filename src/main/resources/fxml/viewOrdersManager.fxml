@@ -6,7 +6,7 @@
 <?import javafx.scene.text.*?>
 
 <?import java.net.URL?>
-<VBox styleClass="background" id="viewOrdersFile" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.ViewOrdersManagerController">
+<VBox styleClass="background" id="viewOrdersFile" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.cja.controllers.ViewOrdersManagerController">
    <HBox alignment="BOTTOM_LEFT" prefHeight="60.0" prefWidth="200.0" style="-fx-spacing: 300;">
       <Button fx:id="backButton" id="backButton" mnemonicParsing="false" styleClass="smallButton" onAction="#handleBackButtonAction" text="Inapoi">
          <HBox.margin>
